@@ -597,3 +597,632 @@ body {
     padding: 20px;
   }
 }
+/* --- Стилі для кнопки копіювання коду --- */
+.code-placeholder {
+  position: relative; /* Важливо для позиціонування кнопки */
+  /* ... твої існуючі стилі (background-color, padding і т.д.) залишаються тут ... */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #3a3a48;
+  color: #dcdcdc;
+  border: 1px solid #4facfe;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: #4facfe;
+  color: #ffffff;
+}
+
+.copy-btn.success {
+  background-color: #00ff88;
+  border-color: #00ff88;
+  color: #1e1e24;
+}
+/* Додаємо відступ знизу для контейнера з кодом */
+.code-placeholder {
+  margin-bottom: 40px;
+}
+
+/* Стилізація головного заголовка завдання */
+.task-title {
+  font-size: 22px;
+  color: #ffaa00; /* Яскравий жовто-помаранчевий акцент */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #3a3a48;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Стилі для підказок (спойлерів) --- */
+.hints-wrapper {
+  margin: 25px 0;
+  background-color: rgba(43, 43, 54, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px dashed #4facfe;
+}
+
+.hints-wrapper h4 {
+  color: #4facfe;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.hint-item {
+  margin-bottom: 10px;
+  background-color: #1e1e24;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #3a3a48;
+}
+
+/* Вигляд кнопки спойлера */
+.hint-item summary {
+  padding: 12px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #dcdcdc;
+  background-color: #3a3a48;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  list-style: none; /* Прибираємо стандартний трикутник браузера */
+}
+
+.hint-item summary::-webkit-details-marker {
+  display: none; /* Для старих браузерів */
+}
+
+/* Кастомний трикутник */
+.hint-item summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 10px;
+  color: #4facfe;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+/* Поворот трикутника при відкритті */
+.hint-item[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.hint-item summary:hover {
+  background-color: #4facfe;
+  color: #ffffff;
+}
+
+.hint-item summary:hover::before {
+  color: #ffffff;
+}
+
+/* Вміст підказки */
+.hint-item p {
+  padding: 15px;
+  margin: 0;
+  border-top: 1px solid #3a3a48;
+  font-size: 16px;
+  color: #dcdcdc;
+}
+/* --- Стилі для клікабельного інлайн-коду --- */
+code.inline-copy {
+  background-color: #2b2b36;
+  color: #ffaa00; /* Яскравий помаранчевий колір для синтаксису */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  border: 1px solid #3a3a48;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block; /* Щоб рамка не ламалася */
+}
+
+code.inline-copy:hover {
+  background-color: #3a3a48;
+  border-color: #4facfe;
+  color: #4facfe;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+/* Стан після успішного копіювання */
+code.inline-copy.copied {
+  background-color: #00ff88;
+  color: #1e1e24;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+/* === ПІДСВІЧУВАННЯ СИНТАКСИСУ (Roblox Studio) === */
+#lua-code {
+  color: #e2e2ec; /* Базовий колір тексту (наприклад, для wall) */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.lua-keyword {
+  color: #f86d7c;
+} /* Червоно-кораловий (local, function) */
+.lua-object {
+  color: #82aaff;
+} /* Синій (script.Parent) */
+.lua-func {
+  color: #82aaff;
+} /* Синій (wait, print) */
+
+.lua-bool {
+  color: #ffc777;
+  font-weight: bold;
+} /* Жовтий жирний (false, true) */
+
+/* ==========================================================================
+   СТИЛІ ДЛЯ ДЗ №8 (Код, Інтерактив, Підказки)
+   ========================================================================== */
+
+/* --- Головний контейнер для коду (Термінал-стиль) --- */
+.code-placeholder {
+  position: relative;
+  background-color: #18181f; /* Глибокий темний фон */
+  padding: 24px 20px 24px 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 6px solid #4facfe; /* Яскравий синій акцент зліва */
+}
+
+.code-placeholder pre {
+  margin: 0;
+  overflow-x: auto; /* Додає скрол, якщо код задовгий */
+}
+
+/* --- Кнопка копіювання головного коду --- */
+.copy-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.05); /* Напівпрозорий фон */
+  color: #dcdcdc;
+  border: 1px solid #4a4a5a;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: #7a7a8a;
+}
+
+.copy-btn.success {
+  background-color: #00ff88; /* Зелений при успіху */
+  color: #18181f;
+  border-color: #00ff88;
+  font-weight: bold;
+}
+
+/* === ПІДСВІЧУВАННЯ СИНТАКСИСУ (Roblox Studio) === */
+
+.lua-object {
+  color: #82aaff;
+} /* Синій (script.Parent) */
+.lua-func {
+  color: #82aaff;
+} /* Синій (wait, print, Vector3.new) */
+
+.lua-string {
+  color: #c3e88d;
+} /* Зелений ("Grey", "Міст...") */
+.lua-vec {
+  color: #c3e88d;
+  font-weight: bold;
+} /* Велика Vector3.new */
+
+/* --- Розподільник секцій (hr.divider) --- */
+.divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #3a3a48, transparent);
+  margin: 40px 0;
+}
+
+/* --- Клікабельний інлайн-код (code.inline-copy) --- */
+code.inline-copy {
+  background-color: #2b2b36;
+  color: #ffaa00; /* Помаранчевий колір синтаксису */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  border: 1px solid #3a3a48;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+code.inline-copy:hover {
+  background-color: #3a3a48;
+  border-color: #4facfe;
+  color: #4facfe;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+/* Стан після успішного інлайн-копіювання */
+code.inline-copy.copied {
+  background-color: #00ff88;
+  color: #1e1e24;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+/* --- Стилі для підказок (details + summary) --- */
+.hint-item {
+  margin-bottom: 10px;
+  background-color: #1e1e24;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #3a3a48;
+}
+
+.hint-item summary {
+  padding: 12px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #dcdcdc;
+  background-color: #3a3a48;
+  list-style: none; /* Прибираємо трикутник */
+  transition: background-color 0.2s;
+}
+
+.hint-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Кастомний трикутник ▶ */
+.hint-item summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 10px;
+  color: #4facfe;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+/* Поворот трикутника при відкритті */
+.hint-item[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.hint-item summary:hover {
+  background-color: #4facfe;
+  color: #ffffff;
+}
+
+.hint-item p {
+  padding: 15px;
+  margin: 0;
+  border-top: 1px solid #3a3a48;
+  font-size: 16px;
+  color: #dcdcdc;
+}
+/* ==========================================================================
+   СТИЛІ ДЛЯ ДЗ №8 (Код, Інтерактив, Підказки)
+   ========================================================================== */
+
+/* --- Головний контейнер для коду (Термінал-стиль) --- */
+.code-placeholder {
+  position: relative;
+  background-color: #18181f; /* Глибокий темний фон */
+  padding: 24px 20px 24px 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 6px solid #4facfe; /* Яскравий синій акцент зліва */
+}
+
+.code-placeholder pre {
+  margin: 0;
+  overflow-x: auto; /* Додає скрол, якщо код задовгий */
+}
+
+.code-placeholder code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  color: #e2e2ec; /* Базовий колір тексту (наприклад, для bridge) */
+  line-height: 1.6;
+}
+
+/* === ПІДСВІЧУВАННЯ СИНТАКСИСУ (Roblox Studio) === */
+.lua-keyword {
+  color: #f86d7c;
+} /* Червоно-кораловий (local, wait) */
+.lua-object {
+  color: #82aaff;
+} /* Синій (script.Parent) */
+.lua-func {
+  color: #82aaff;
+} /* Синій (wait, print, Vector3.new) */
+
+.lua-string {
+  color: #c3e88d;
+} /* Зелений ("Grey", "Міст...") */
+.lua-vec {
+  color: #c3e88d;
+  font-weight: bold;
+} /* Велика Vector3.new */
+
+/* --- Розподільник секцій (hr.divider) --- */
+.divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #3a3a48, transparent);
+  margin: 40px 0;
+}
+
+/* --- Клікабельний інлайн-код (code.inline-copy) --- */
+code.inline-copy {
+  background-color: #2b2b36;
+  color: #ffaa00; /* Помаранчевий колір синтаксису */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  border: 1px solid #3a3a48;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+code.inline-copy:hover {
+  background-color: #3a3a48;
+  border-color: #4facfe;
+  color: #4facfe;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+/* Стан після успішного інлайн-копіювання */
+code.inline-copy.copied {
+  background-color: #00ff88;
+  color: #1e1e24;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+/* --- Стилі для підказок (details + summary) --- */
+.hint-item {
+  margin-bottom: 10px;
+  background-color: #1e1e24;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #3a3a48;
+}
+
+.hint-item summary {
+  padding: 12px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #dcdcdc;
+  background-color: #3a3a48;
+  list-style: none; /* Прибираємо трикутник */
+  transition: background-color 0.2s;
+}
+
+.hint-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Кастомний трикутник ▶ */
+.hint-item summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 10px;
+  color: #4facfe;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+/* Поворот трикутника при відкритті */
+.hint-item[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.hint-item summary:hover {
+  background-color: #4facfe;
+  color: #ffffff;
+}
+
+.hint-item p {
+  padding: 15px;
+  margin: 0;
+  border-top: 1px solid #3a3a48;
+  font-size: 16px;
+  color: #dcdcdc;
+}
+/* ==========================================================================
+   СТИЛІ ДЛЯ ДЗ №8 (Код, Інтерактив, Підказки)
+   ========================================================================== */
+
+/* --- Головний контейнер для коду (Термінал-стиль) --- */
+.code-placeholder {
+  position: relative;
+  background-color: #18181f; /* Глибокий темний фон */
+  padding: 24px 20px 24px 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 6px solid #4facfe; /* Яскравий синій акцент зліва */
+}
+
+.code-placeholder pre {
+  margin: 0;
+  overflow-x: auto; /* Додає скрол, якщо код задовгий */
+}
+
+/* === ПІДСВІЧУВАННЯ СИНТАКСИСУ (Roblox Studio) === */
+.lua-keyword {
+  color: #f86d7c;
+} /* Червоно-кораловий (local, wait) */
+.lua-object {
+  color: #82aaff;
+} /* Синій (script.Parent) */
+.lua-func {
+  color: #82aaff;
+} /* Синій (wait, print, Vector3.new) */
+
+.lua-string {
+  color: #c3e88d;
+} /* Зелений ("Grey", "Міст...") */
+.lua-vec {
+  color: #c3e88d;
+  font-weight: bold;
+} /* Велика Vector3.new */
+
+/* --- Розподільник секцій (hr.divider) --- */
+.divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #3a3a48, transparent);
+  margin: 40px 0;
+}
+
+/* --- Клікабельний інлайн-код (code.inline-copy) --- */
+code.inline-copy {
+  background-color: #2b2b36;
+  color: #ffaa00; /* Помаранчевий колір синтаксису */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  border: 1px solid #3a3a48;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+code.inline-copy:hover {
+  background-color: #3a3a48;
+  border-color: #4facfe;
+  color: #4facfe;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+/* Стан після успішного інлайн-копіювання */
+code.inline-copy.copied {
+  background-color: #00ff88;
+  color: #1e1e24;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+/* --- Стилі для підказок (details + summary) --- */
+.hint-item {
+  margin-bottom: 10px;
+  background-color: #1e1e24;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #3a3a48;
+}
+
+.hint-item summary {
+  padding: 12px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #dcdcdc;
+  background-color: #3a3a48;
+  list-style: none; /* Прибираємо трикутник */
+  transition: background-color 0.2s;
+}
+
+.hint-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Кастомний трикутник ▶ */
+.hint-item summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 10px;
+  color: #4facfe;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+/* Поворот трикутника при відкритті */
+.hint-item[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.hint-item summary:hover {
+  background-color: #4facfe;
+  color: #ffffff;
+}
+
+.hint-item p {
+  padding: 15px;
+  margin: 0;
+  border-top: 1px solid #3a3a48;
+  font-size: 16px;
+  color: #dcdcdc;
+}
+
+/* ==========================================================================
+   ПІДСВІЧУВАННЯ СИНТАКСИСУ (Reusable Classes)
+   Додай це у свій style.css ОДИН РАЗ, щоб код на сайті мав кольори
+   ========================================================================== */
+
+/* Кольори підібрані максимально близько до Roblox Studio (темна тема) */
+.lua-keyword {
+  color: #f86d7c;
+} /* Червоно-кораловий (local, wait) */
+.lua-object {
+  color: #82aaff;
+} /* Синій (script.Parent) */
+.lua-func {
+  color: #82aaff;
+} /* Синій (wait, print) */
+.lua-prop {
+  color: #82aaff;
+} /* Синій (BrickColor, Size) */
+.lua-num {
+  color: #ffc777;
+} /* Жовтий (5, 2, 4, 1, 20) */
+.lua-string {
+  color: #c3e88d;
+} /* Зелений ("Grey", "Міст...") */
+.lua-vec {
+  color: #c3e88d;
+  font-weight: bold;
+} /* Велика Vector3.new */
+/* --- Спеціальний стиль для виноски у ДЗ №8 --- */
+.info-box.footnote-box {
+  margin-top: 20px;
+  background-color: rgba(79, 172, 254, 0.1); /* Дуже прозорий синій фонок */
+  border: 2px dashed #4facfe; /* Пунктирна синя рамка */
+  color: #4facfe; /* Синій колір тексту */
+  font-style: italic; /* Курсив для виділення */
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 6</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -22,10 +22,10 @@
           <a href="hw3.html" class="task-link">Завдання 3</a>
           <a href="hw4.html" class="task-link">Завдання 4</a>
           <a href="hw5.html" class="task-link">Завдання 5</a>
-          <a href="hw6.html" class="task-link">Завдання 6</a>
+          <a href="hw6.html" class="task-link active">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
-
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 🔒</a>
           <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
           <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
           <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
@@ -37,17 +37,181 @@
         </nav>
       </aside>
 
-      <main class="main-content locked">
-        <div class="content-box"></div>
+      <main class="main-content">
+        <div class="content-box">
+          <h1>Завдання 6: Перший скрипт. Зникаюча стіна 📜</h1>
 
-        <div class="lock-overlay">
-          <div class="lock-card">
-            <div class="lock-icon">🛑</div>
-            <h2>Ці домашні завдання поки недоступні.</h2>
-            <p>Завдання відкриється <strong>23.04.2026</strong></p>
+          <div class="info-box deadline-box">
+            <strong>⏳ Дедлайн виконання:</strong> до наступного уроку.
+          </div>
+
+          <section class="task-section">
+            <p>
+              На уроці ми написали базовий скрипт для стіни в лабіринті. Він
+              робить так, щоб через 10 секунд стіна стала невидимою та
+              пропускала гравця.
+            </p>
+
+            <div class="code-placeholder">
+              <button class="copy-btn" onclick="copyCode(this)">
+                📋 Копіювати
+              </button>
+              <pre><code id="lua-code"><span class="lua-keyword">local</span> wall = <span class="lua-object">script.Parent</span>
+
+<span class="lua-func">wait</span>(<span class="lua-num">10</span>)
+wall.<span class="lua-prop">Transparency</span> = <span class="lua-num">1</span>
+wall.<span class="lua-prop">CanCollide</span> = <span class="lua-bool">false</span></code></pre>
+            </div>
+
+            <h3 class="task-title">🛠 Твоє завдання:</h3>
+            <p>
+              Допиши цей скрипт так, щоб через 5 секунд як стіна зникла вона
+              <strong>поверталася назад</strong> (ставала видимою і твердою).
+            </p>
+
+            <div class="hints-wrapper">
+              <h4>💡 Підказки (натисни на крок, щоб відкрити):</h4>
+
+              <details class="hint-item">
+                <summary>Крок 1</summary>
+                <p>Відкрий скрипт всередині своєї стіни.</p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Крок 2</summary>
+                <p>
+                  Додай команду
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >wait(5)</code
+                  >
+                  після існуючого коду.
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Крок 3</summary>
+                <p>
+                  Поверни властивості
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >Transparency</code
+                  >
+                  значення
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >0</code
+                  >
+                  (видима).
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Крок 4</summary>
+                <p>
+                  Поверни властивості
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >CanCollide</code
+                  >
+                  значення
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >true</code
+                  >
+                  (тверда).
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Крок 5</summary>
+                <p>
+                  Запусти гру та перевір, чи стіна зникає, а потім з'являється
+                  знову.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <hr class="divider" />
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>💻 Перевір себе: Основи скриптингу</h3>
+              <p>
+                Повтори терміни, які ми вивчили на уроці. Виконау УСІ завдання
+                та надішли скриншот у наш Telegram-чат.
+              </p>
+
+              <div class="iframe-wrapper" style="margin-bottom: 25px">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/ee431edb45fd4ab9b1a6853523aba762?themeId=26&templateId=3&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="iframe-wrapper" style="margin-bottom: 25px">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/767124efd4514b35a7f6bf736781c32c?themeId=59&templateId=35&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="iframe-wrapper">
+                <iframe
+                  src="https://learningapps.org/watch?v=puvujpvia26"
+                  style="border: 0px; width: 100%; height: 500px"
+                  allowfullscreen="true"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="sticker-box">
+              <div class="character-sticker">
+                <div class="char-hair"></div>
+                <div class="char-face">💻</div>
+                <div class="char-body"></div>
+              </div>
+              <div class="sticker-text">
+                <strong>Синтаксис важливий</strong><br />
+                Уважно стеж за великими та малими літерами у коді.
+                <code>true</code> та <code>false</code> завжди пишуться з
+                маленької літери.
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Зроби скріншот свого написаного коду.<br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
           </div>
         </div>
       </main>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

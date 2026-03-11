@@ -23,9 +23,9 @@
           <a href="hw4.html" class="task-link">Завдання 4</a>
           <a href="hw5.html" class="task-link">Завдання 5</a>
           <a href="hw6.html" class="task-link">Завдання 6</a>
-          <a href="hw7.html" class="task-link">Завдання 7</a>
+          <a href="hw7.html" class="task-link active">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 🔒</a>
           <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
           <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
           <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
@@ -37,9 +37,107 @@
         </nav>
       </aside>
 
-      <main class="main-content locked">
-        <div class="content-box"></div>
+      <main class="main-content">
+        <div class="content-box">
+          <h1>Завдання 7: Скриптовий Міст та Кольори 🏗️🎨</h1>
 
+          <div class="info-box deadline-box">
+            <strong>⏳ Дедлайн виконання:</strong> до наступного уроку.
+          </div>
+
+          <p>
+            На цьому уроці ми вивчили, як змінювати фізичні параметри об'єктів
+            (колір, розмір) прямо під час гри за допомогою скриптів. Твоє
+            завдання — застосувати ці знання, щоб допомогти гравцю подолати
+            перешкоду.
+          </p>
+
+          <section class="task-section">
+            <h3 class="task-title">
+              🛠️ Твоє завдання: Побудуй міст-трансформер
+            </h3>
+            <p>
+              Створи в лабіринті ділянку з лавою, яку неможливо перестрибнути.
+              Напиши скрипт для маленького блоку, який за часом перетвориться на
+              довгий міст через цю лаву.
+            </p>
+
+            <ul class="task-steps">
+              <li>
+                <b>1. Небезпечна Лава (Toolbox):</b> Відкрий Тулбокс, знайди
+                "Killing Lava". Додай її в лабіринт. Обов'язково запусти гру і
+                перевір, чи вона вбиває твого персонажа!
+              </li>
+              <li>
+                <b>2. Розміщення:</b> Постав цю лаву в прохід в лабіринті, щоб
+                її не можна було перестрибнути.
+              </li>
+              <li>
+                <b>3. Основа Мосту:</b> Створи маленький звичайний парт. Назви
+                його "Bridge". Розмісти його *поверх* лави. Він має бути дуже
+                маленьким, щоб через нього не можна було пройти.
+              </li>
+              <li>
+                <b>4. Активація (Скрипт):</b> Напиши скрипт всередині "Bridge",
+                який через 5 секунд збільшує його розмір, щоб він перекрив лаву
+                і став мостом.
+              </li>
+              <li>
+                <b>5. Зникнення:</b> Ще через кілька секунд скрипт має повернути
+                блоку його початковий маленький розмір.
+              </li>
+            </ul>
+
+            <div class="info-box footnote-box">
+              <strong>📌 Важлива виноска:</strong><br />
+              Поки що цей скрипт спрацює лише один раз після запуску гри. На
+              наступних уроках ми вивчимо повторення (цикли) і зробимо так, щоб
+              міст з'являвся та зникав постійно!
+            </div>
+          </section>
+
+          <hr class="divider" />
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Сінтаксис Векторів</h3>
+              <p>
+                Навчись правильно писати команди для зміни розміру та кольору.
+                З'єднай дію з правильним кодом.
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  src="ТУТ_БУДЕ_ТВОЄ_ПОСИЛАННЯ_З_WORDWALL"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="sticker-box">
+              <div class="character-sticker">
+                <div class="char-hair"></div>
+                <div class="char-face">📐</div>
+                <div class="char-body"></div>
+              </div>
+              <div class="sticker-text">
+                <strong>ОБОВ'ЯЗКОВО ANCHOR!</strong><br />
+                Якщо ти забудеш поставити галочку Anchored на основі мосту, при
+                видовженні скриптом він просто впаде в лаву і згорить.
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Скріншот твоєї пастки або рухомих дверей.<br />
+              2️⃣ Скріншот пройденого інтерактивного завдання.<br />
+              Відправ матеріали у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
         <div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>
@@ -49,5 +147,6 @@
         </div>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
