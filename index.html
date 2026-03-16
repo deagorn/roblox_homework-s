@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roblox Домашні Завдання</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="app-container">
@@ -17,15 +22,16 @@
           <h2>🎮 Roblox ДЗ</h2>
         </div>
         <nav class="task-list">
+          <a href="index.html" class="task-link active">Start page</a>
           <a href="hw1.html" class="task-link">Завдання 1</a>
-          <a href="hw2.html" class="task-link">Завдання 2</a>
-          <a href="hw3.html" class="task-link">Завдання 3</a>
-          <a href="hw4.html" class="task-link">Завдання 4</a>
-          <a href="hw5.html" class="task-link">Завдання 5</a>
-          <a href="hw6.html" class="task-link">Завдання 6</a>
-          <a href="hw7.html" class="task-link">Завдання 7</a>
+          <a href="hw2.html" class="task-link">Завдання 2🔒</a>
+          <a href="hw3.html" class="task-link">Завдання 3🔒</a>
+          <a href="hw4.html" class="task-link">Завдання 4🔒</a>
+          <a href="hw5.html" class="task-link">Завдання 5🔒</a>
+          <a href="hw6.html" class="task-link">Завдання 6🔒</a>
+          <a href="hw7.html" class="task-link">Завдання 7🔒</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 🔒</a>
           <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
           <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
           <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
@@ -37,30 +43,92 @@
         </nav>
       </aside>
 
-      <main class="main-content locked">
+      <main class="main-content">
         <div class="content-box">
-          <h1>Завдання 8: Створення першого NPC</h1>
-          <p>
-            Привіт, розробнику! 👋 Тут буде знаходитися твоє домашнє завдання.
-          </p>
-          <div class="code-placeholder">
-            <p>
-              <i
-                >Тут можна вставити код на Lua або скріншоти з Roblox
-                Studio...</i
-              >
+          <div class="welcome-banner">
+            <h1>Вітаємо у світі розробки Roblox Studio! 🧱✨</h1>
+            <p class="intro-text">
+              Це твоя персональна панель керування навчанням. Тут ти знайдеш усі
+              необхідні матеріали, інструкції та завдання для домашньої роботи.
+              Просто використовуй <strong>панель ліворуч</strong>, де
+              знаходиться список ДЗ, щоб переходити до відповідного уроку та
+              виконувати круті проєкти в Roblox.
             </p>
           </div>
-        </div>
 
-        <div class="lock-overlay">
-          <div class="lock-card">
-            <div class="lock-icon">🛑</div>
-            <h2>Ці домашні завдання поки недоступні.</h2>
-            <p>Завдання відкриється <strong>23.04.2026</strong></p>
+          <section class="task-section">
+            <div class="task-header">
+              <div class="task-icon-wrapper">
+                <i class="fa-solid fa-keyboard"></i>
+              </div>
+              <h2 class="task-title">
+                Твоє перше завдання: Тест на швидкість друку!
+              </h2>
+            </div>
+
+            <p class="task-description">
+              Для успішного створення ігор у Roblox Studio, коду та команд, тобі
+              знадобиться не лише уява, а й швидкість! Ми підготували для тебе
+              тест, щоб перевірити, як швидко ти вмієш друкувати. Це важливо,
+              щоб економити час на написанні коду та швидко втілювати свої ідеї.
+            </p>
+
+            <div class="instructions-card">
+              <h3>
+                <i class="fa-solid fa-list-check"></i> Що потрібно зробити:
+              </h3>
+              <ol class="custom-list">
+                <li>
+                  Почни вводити текст у вікні знизу. Пиши код уважно та швидко,
+                  не відволікайся.
+                </li>
+                <li>
+                  Зроби скріншот свого фінального результату (має бути видно
+                  швидкість WPM та точність).
+                </li>
+                <li>Надішли цей скріншот у наш Telegram-чат!</li>
+              </ol>
+            </div>
+
+            <div class="iframe-browser-mockup">
+              <div class="browser-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <div class="browser-url">https://10fastfingers.com</div>
+              </div>
+              <div class="iframe-wrapper">
+                <iframe
+                  width="640"
+                  height="600"
+                  src="https://10fastfingers.com/widgets/ttembeddable/?dur=300&rand=0&words=Robot.start()|Step:10px|Step:20px|Step:50px|Turn:%22Left%22|Turn:%22Right%22|Move(forward)|Move(back)|Say:%22Hello!%22|Say:%22OK%22|Say:%22Go%22|Speed"
+                  frameborder="0"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <hr class="glow-divider" />
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">🚀</div>
+            <div>
+              <strong>ЧАС ПОЧИНАТИ!</strong><br />
+              Кожен великий розробник починав з малого. Пройди тест,
+              <b>здай результат у Telegram</b> і переходь до першого завдання.
+              Удачі у створенні власних світів!
+              <br />
+            </div>
           </div>
         </div>
       </main>
     </div>
+
+    <div id="lightbox-modal" class="lightbox">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

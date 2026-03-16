@@ -1,0 +1,238 @@
+/* ==========================================================================
+   ОСНОВНІ ЗМІННІ ТЕМИ (Темна геймерська тема)
+   ========================================================================== */
+:root {
+  /* Кольори фону */
+  --bg-app: #0f172a; /* Найтемніший синій (фон всього екрану) */
+  --bg-sidebar: #1e293b; /* Трохи світліший для бокової панелі */
+  --bg-card: #1e293b; /* Основний фон контенту */
+  --bg-card-inner: #334155; /* Фон для внутрішніх блоків */
+
+  /* Текст */
+  --text-main: #f8fafc; /* Білий/світло-сірий для основного тексту */
+  --text-muted: #94a3b8; /* Сірий для другорядного тексту */
+
+  /* Акценти (в стилі Roblox Studio) */
+  --accent-blue: #3b82f6; /* Яскравий синій */
+  --accent-blue-hover: #60a5fa;
+  --accent-orange: #f59e0b; /* Помаранчевий/золотий */
+  --accent-green: #10b981; /* Зелений для успіху */
+  --accent-red: #ef4444; /* Червоний для помилок/закритого */
+
+  /* Інше */
+  --border-radius: 12px;
+  --glow-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+/* ==========================================================================
+   ГОЛОВНИЙ КОНТЕНТ
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Банер привітання */
+.welcome-banner {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.1), transparent);
+  border-left: 4px solid var(--accent-blue);
+  padding: 25px 30px;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  margin-bottom: 40px;
+}
+
+.welcome-banner h1 {
+  margin-top: 0;
+  color: var(--text-main);
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Заголовок завдання з іконкою */
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.task-icon-wrapper {
+  background-color: var(--accent-blue);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: var(--glow-shadow);
+}
+
+.task-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.task-description {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Картка з інструкціями (Список кроків) */
+.instructions-card {
+  background-color: var(--bg-card-inner);
+  border-radius: var(--border-radius);
+  padding: 25px 30px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.instructions-card h3 {
+  margin-top: 0;
+  color: var(--accent-orange);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.custom-list li {
+  margin-bottom: 12px;
+  color: var(--text-main);
+  font-size: 16px;
+}
+.custom-list li:last-child {
+  margin-bottom: 0;
+}
+.custom-list strong {
+  color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   IFRAME ТА ДЕКОР (Стилізація під браузер)
+   ========================================================================== */
+/* ==========================================================================
+   IFRAME ТА ДЕКОР (Стилізація під браузер)
+   ========================================================================== */
+.iframe-browser-mockup {
+  background-color: #0f172a;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #334155;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.browser-bar {
+  background-color: #1e293b;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #334155;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background-color: #ef4444;
+}
+.dot.yellow {
+  background-color: #f59e0b;
+}
+.dot.green {
+  background-color: #10b981;
+}
+
+.browser-url {
+  background-color: #0f172a;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 4px 15px;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-family: monospace;
+}
+
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Пропорція 16:9 */
+  height: 0;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==========================================================================
+   РОЗПОДІЛЬНИК ТА МОТИВАЦІЯ
+   ========================================================================== */
+.glow-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(59, 130, 246, 0.5),
+    transparent
+  );
+  margin: 40px 0;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.motivation-panel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px dashed var(--accent-orange);
+  padding: 20px 25px;
+  border-radius: var(--border-radius);
+}
+
+.motivation-icon {
+  font-size: 40px;
+}
+
+.motivation-content h4 {
+  margin: 0 0 5px 0;
+  color: var(--accent-orange);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.motivation-content p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15px;
+}
