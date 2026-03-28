@@ -131,10 +131,10 @@ body {
   justify-content: center;
 }
 
-/* Показуємо оверлей, якщо main має клас 'locked' */
+/* Показуємо оверлей, якщо main має клас 'locked' 
 .main-content.locked .lock-overlay {
   display: flex;
-}
+}*/
 
 .lock-card {
   background: linear-gradient(145deg, #2b2b36, #3a3a48);
@@ -761,13 +761,28 @@ code.inline-copy.copied {
   color: #82aaff;
 } /* Синій (script.Parent) */
 .lua-func {
-  color: #82aaff;
+  color: #fdce00;
 } /* Синій (wait, print) */
 
 .lua-bool {
   color: #ffc777;
   font-weight: bold;
 } /* Жовтий жирний (false, true) */
+
+.lua-prop {
+  color: #82aaff;
+} /* Синій (BrickColor, Size) */
+.lua-num {
+  color: #ffc777;
+} /* Жовтий (5, 2, 4, 1, 20) */
+
+.lua-string {
+  color: #c3e88d;
+} /* Зелений ("Grey", "Міст...") */
+.lua-vec {
+  color: #c3e88d;
+  font-weight: bold;
+} /* Велика Vector3.new */
 
 /* ==========================================================================
    СТИЛІ ДЛЯ ДЗ №8 (Код, Інтерактив, Підказки)
@@ -819,23 +834,6 @@ code.inline-copy.copied {
   border-color: #00ff88;
   font-weight: bold;
 }
-
-/* === ПІДСВІЧУВАННЯ СИНТАКСИСУ (Roblox Studio) === */
-
-.lua-object {
-  color: #82aaff;
-} /* Синій (script.Parent) */
-.lua-func {
-  color: #82aaff;
-} /* Синій (wait, print, Vector3.new) */
-
-.lua-string {
-  color: #c3e88d;
-} /* Зелений ("Grey", "Міст...") */
-.lua-vec {
-  color: #c3e88d;
-  font-weight: bold;
-} /* Велика Vector3.new */
 
 /* --- Розподільник секцій (hr.divider) --- */
 .divider {
@@ -953,25 +951,6 @@ code.inline-copy.copied {
   line-height: 1.6;
 }
 
-/* === ПІДСВІЧУВАННЯ СИНТАКСИСУ (Roblox Studio) === */
-.lua-keyword {
-  color: #f86d7c;
-} /* Червоно-кораловий (local, wait) */
-.lua-object {
-  color: #82aaff;
-} /* Синій (script.Parent) */
-.lua-func {
-  color: #82aaff;
-} /* Синій (wait, print, Vector3.new) */
-
-.lua-string {
-  color: #c3e88d;
-} /* Зелений ("Grey", "Міст...") */
-.lua-vec {
-  color: #c3e88d;
-  font-weight: bold;
-} /* Велика Vector3.new */
-
 /* --- Розподільник секцій (hr.divider) --- */
 .divider {
   border: 0;
@@ -1081,25 +1060,6 @@ code.inline-copy.copied {
   overflow-x: auto; /* Додає скрол, якщо код задовгий */
 }
 
-/* === ПІДСВІЧУВАННЯ СИНТАКСИСУ (Roblox Studio) === */
-.lua-keyword {
-  color: #f86d7c;
-} /* Червоно-кораловий (local, wait) */
-.lua-object {
-  color: #82aaff;
-} /* Синій (script.Parent) */
-.lua-func {
-  color: #82aaff;
-} /* Синій (wait, print, Vector3.new) */
-
-.lua-string {
-  color: #c3e88d;
-} /* Зелений ("Grey", "Міст...") */
-.lua-vec {
-  color: #c3e88d;
-  font-weight: bold;
-} /* Велика Vector3.new */
-
 /* --- Розподільник секцій (hr.divider) --- */
 .divider {
   border: 0;
@@ -1196,28 +1156,7 @@ code.inline-copy.copied {
    ========================================================================== */
 
 /* Кольори підібрані максимально близько до Roblox Studio (темна тема) */
-.lua-keyword {
-  color: #f86d7c;
-} /* Червоно-кораловий (local, wait) */
-.lua-object {
-  color: #82aaff;
-} /* Синій (script.Parent) */
-.lua-func {
-  color: #82aaff;
-} /* Синій (wait, print) */
-.lua-prop {
-  color: #82aaff;
-} /* Синій (BrickColor, Size) */
-.lua-num {
-  color: #ffc777;
-} /* Жовтий (5, 2, 4, 1, 20) */
-.lua-string {
-  color: #c3e88d;
-} /* Зелений ("Grey", "Міст...") */
-.lua-vec {
-  color: #c3e88d;
-  font-weight: bold;
-} /* Велика Vector3.new */
+
 /* --- Спеціальний стиль для виноски у ДЗ №8 --- */
 .info-box.footnote-box {
   margin-top: 20px;
@@ -1254,7 +1193,45 @@ code.inline-copy.copied {
   width: 100%;
   height: 100%;
   border: none;
-}
+} /*
 .main-content:has(.lock-overlay) {
-  overflow: hidden; /* <--- САМЕ ЦЕ ВИМИКАЄ ПРОКРУТКУ */
+  overflow: hidden;  <--- САМЕ ЦЕ ВИМИКАЄ ПРОКРУТКУ 
+}*/
+/* === БЛОК МОТИВАЦІЇ / УСКЛАДНЕННЯ === */
+.motivation-panel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(239, 68, 68, 0.1); /* Напівпрозорий червоний фон */
+  border: 1px dashed #ef4444; /* Червона пунктирна рамка */
+  padding: 20px 25px;
+  border-radius: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.motivation-icon {
+  font-size: 40px;
+  flex-shrink: 0; /* Забороняє іконці стискатися, якщо тексту багато */
+}
+
+.motivation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.motivation-content h4 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* Колір #ef4444 вже вказаний у тебе в HTML (inline), тому тут його можна опустити або продублювати */
+}
+
+.motivation-content p {
+  margin: 0;
+  color: #94a3b8; /* Світло-сірий колір для додаткового тексту */
+  font-size: 15px;
+  line-height: 1.6;
 }

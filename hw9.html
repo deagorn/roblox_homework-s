@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 9</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,8 +25,8 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 </a>
+          <a href="hw9.html" class="task-link active">Завдання 9 🔒</a>
           <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
           <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
           <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
@@ -38,7 +38,243 @@
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 9: Магічна Платформа 🔀👻</h1>
+            <p class="intro-text">
+              На цьому уроці ми вивчили основу логіки програмування —
+              розгалуження (умови <code>if ... then</code>). Твоє завдання —
+              використати ці знання, щоб створити для свого Оббі «магічну
+              платформу», яка проявляється у світі, тільки якщо на неї багато
+              клікати!
+            </p>
+          </div>
+
+          <section class="task-section">
+            <div class="task-header">
+              <div
+                class="task-icon-wrapper"
+                style="background-color: var(--accent-blue)"
+              >
+                <i class="fa-solid fa-ghost"></i>
+              </div>
+              <h2 class="task-title">
+                🛠️ План роботи: Створи платформу-привида
+              </h2>
+            </div>
+
+            <div class="instructions-card">
+              <div class="hints-wrapper">
+                <h4>
+                  💡 Кроки виконання завдання (натисни на крок, щоб відкрити):
+                </h4>
+
+                <details class="hint-item">
+                  <summary>Крок 1</summary>
+                  <p>
+                    <strong>Створення платформи:</strong> Додай звичайний Part у
+                    своє Оббі. Обов'язково увімкни Anchored, щоб платформа
+                    висіла в повітрі і не впала.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 2</summary>
+                  <p>
+                    <strong>Властивості привида:</strong> У вікні Properties
+                    зроби її повністю прозорою (знайди Transparency і напиши 1)
+                    та вимкни фізичне зіткнення (зніми галочку з CanCollide).
+                    Тепер через неї можна провалитися.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 3</summary>
+                  <p>
+                    <strong>Додавання інструментів:</strong> У вікні Explorer
+                    знайди свою платформу і додай всередину неї два об'єкти:
+                    ClickDetector та Script.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 4</summary>
+                  <p>
+                    <strong>Змінна-лічильник:</strong> Відкрий скрипт. Створи
+                    змінну для платформи, а також змінну, яка буде рахувати
+                    кліки (наприклад,
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >local click = 0</code
+                    >). Вона має бути на самому початку, до функції.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 5</summary>
+                  <p>
+                    <strong>Функція кліку:</strong> Напиши подію
+
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >MouseClick:Connect(function()</code
+                    >, яка буде запускати код щоразу, коли гравець натискає на
+                    платформу.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 6</summary>
+                  <p>
+                    <strong>Проявлення платформи:</strong> Всередині функції
+                    напиши математику: при кожному кліку додавай +1 до
+                    лічильника (
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >click = click + 1</code
+                    >) та віднімай 0.1 від прозорості (<code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >Transparency = Transparency - 0.1</code
+                    >).
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>Крок 7</summary>
+                  <p>
+                    <strong>Умова (Розгалуження):</strong> Одразу під
+                    математикою додай перевірку if:
+                    <strong>ЯКЩО</strong> кількість кліків дорівнює 10 (<code
+                      >click == 10</code
+                    >), <strong>ТОДІ</strong> виконуємо наступний крок.
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>Крок 8</summary>
+                  <p>
+                    <strong>Тверда платформа:</strong> Всередині блоку if
+                    увімкни зіткнення (
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >CanCollide = true</code
+                    >). Тепер гравець може на неї стрибнути.
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>Крок 9</summary>
+                  <p>
+                    <strong>Таймер та скидання:</strong> Щоб ускладнити гру,
+                    одразу після увімкнення зіткнення додай
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >wait(10)</code
+                    >. Після паузи поверни все назад: прозорість на 1,
+                    CanCollide вимкнено, а змінну click обнули (до 0<).
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>Крок 10</summary>
+                  <p>
+                    <strong> Підказка до коду:</strong>
+                  </p>
+                  <div class="code-placeholder">
+                    <button
+                      class="copy-btn"
+                      onclick="copyCode2(this, 'lua-code-if')"
+                    >
+                      📋 Копіювати
+                    </button>
+                    <pre><code id="lua-code-if"><span class="lua-keyword">local</span> platform = <span class="lua-object">script.Parent</span>
+<span class="lua-keyword">local</span> click = <span class="lua-num">0</span>
+
+platform.<span class="lua-object">ClickDetector.MouseClick:</span><span class="lua-func">Connect</span>(<span class="lua-keyword">function</span>()
+    click = click + <span class="lua-num">1</span>
+    platform.<span class="lua-object">Transparency</span> = platform.<span class="lua-object">Transparency</span> - <span class="lua-num">0.1</span>
+    
+    <span class="lua-keyword">if</span> click == <span class="lua-num">10</span> <span class="lua-keyword">then</span>
+        platform.<span class="lua-object">CanCollide</span> = <span class="lua-bool">true</span>
+        <span class="lua-object">wait</span>(<span class="lua-num">10</span>)
+        platform.<span class="lua-object">Transparency</span> = <span class="lua-num">1</span>
+        platform.<span class="lua-object">CanCollide</span> = <span class="lua-bool">false</span>
+        click = <span class="lua-num">0</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>)</code></pre>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="video-section">
+              <h3 class="task-title" style="margin-bottom: 15px">
+                <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+                Відеоприклад проєкту
+              </h3>
+              <div class="youtube-wrapper">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/RRa7XXkPyD4?si=nqrClOIA0mi7MBhA"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <hr class="divider" />
+          </section>
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Логіка if / then</h3>
+              <p>
+                Закріпи свої знання про написання умов та використання
+                операторів дорівнює (==).
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/19ec40f130b642bab9ff73140660d6f1?themeId=55&templateId=35&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Зроби скріншот свого написаного коду.<br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
 
         <div class="lock-overlay">
           <div class="lock-card">
@@ -48,5 +284,6 @@
         </div>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

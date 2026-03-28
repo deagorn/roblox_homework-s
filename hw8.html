@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 8</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,7 +25,7 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
+          <a href="hw8.html" class="task-link active">Завдання 8</a>
           <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
           <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
           <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
@@ -38,15 +38,158 @@
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 8: Клікер-арена та Знищення ⚔️🖱️</h1>
+          </div>
 
-        <div class="lock-overlay">
+          <p class="intro-text">
+            На цьому уроці ми розібрали <code>ClickDetector</code>, а також
+            команди для знищення об'єктів (<code>Destroy</code>) та розриву
+            з'єднань (<code>BreakJoints</code>). Твоє завдання — створити власну
+            гру в жанрі "клікер", де ти будеш боротися з ворогами за допомогою
+            мишки!
+          </p>
+
+          <section class="task-section">
+            <div class="task-header">
+              <h2 class="task-title">🛠️ Що потрібно зробити:</h2>
+            </div>
+
+            <div class="instructions-card">
+              <p>Що потрібно зробити:</p>
+              <ul class="task-steps">
+                <li>
+                  <strong>Дизайн карти:</strong> Використовуй Toolbox, щоб
+                  розробити гарний дизайн своєї арени.
+                </li>
+                <li>
+                  <strong>Вороги:</strong> Знайди в Toolbox ворога (наприклад,
+                  зомбі) та додай його на карту. <br />
+                  <em
+                    >⚠️ Увага: Обов'язково протестуй! Знайди таких ворогів, які
+                    намагаються атакувати лише гравця, а не б'ються один з
+                    одним.</em
+                  >
+                </li>
+                <li>
+                  <strong>Клік-Детектор:</strong> Обери зомбі та додай всередину
+                  нього об'єкт <code>ClickDetector</code>.
+                </li>
+                <li>
+                  <strong>Скрипт:</strong> Додай скрипт до зомбі та напиши код,
+                  який буде наносити йому урон при кожному кліку.
+                </li>
+              </ul>
+            </div>
+
+            <h4 style="margin-top: 30px; margin-bottom: 15px">
+              Базовий код для нанесення урону:
+            </h4>
+            <div class="code-placeholder">
+              <button
+                class="copy-btn"
+                onclick="copyCode2(this, 'lua-code-clicker')"
+              >
+                📋 Копіювати
+              </button>
+              <pre><code id="lua-code-clicker"><span class="lua-keyword">local</span> npc = <span class="lua-object">script.Parent</span>
+
+npc.<span class="lua-object">ClickDetector.MouseClick</span>:<span class="lua-func">Connect</span>(<span class="lua-keyword">function</span>()
+    npc.Humanoid.Health -= <span class="lua-num">10</span>
+<span class="lua-keyword">end</span>)</code></pre>
+            </div>
+
+            <div
+              class="motivation-panel"
+              style="
+                margin-top: 30px;
+                background-color: rgba(239, 68, 68, 0.1);
+                border-color: #ef4444;
+              "
+            >
+              <div class="motivation-icon">🔥</div>
+              <div class="motivation-content">
+                <h4 style="color: #ef4444">Рівень "ПРО": Ускладнення гри!</h4>
+                <p>
+                  Спробуй зробити гру в кілька етапів. Напиши логіку так, щоб
+                  при кліку зомбі кожного разу отримував усе менше й менше
+                  урону. Це змусить гравців клікати набагато активніше, щоб
+                  здобути перемогу!
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <div class="video-section">
+            <h3 class="task-title" style="margin-bottom: 15px">
+              <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+              Відеоприклад проєкту
+            </h3>
+            <div class="youtube-wrapper">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/cI6NPumtIC0?si=gy2qUhY4j6BcL2mj"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <hr class="divider" />
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Знищення та ClickDetector</h3>
+              <p>
+                Закріпи свої знання про <code>ClickDetector</code>, віднімання
+                здоров'я та команди знищення. Біжи до правильної відповіді в
+                лабіринті й намагайся уникнути ворогів.
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/62f86f5684a5475395d5229fc58828be?themeId=23&templateId=49&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Зроби скріншот свого написаного коду.<br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>
             <h2>Ці домашні завдання поки недоступні.</h2>
           </div>
-        </div>
+        </div>-->
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
