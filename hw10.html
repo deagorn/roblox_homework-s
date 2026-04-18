@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 10</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,9 +25,9 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 </a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link active">Завдання 10 🔒</a>
           <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
           <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
           <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
@@ -38,7 +38,161 @@
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 10: Подія дотику та Аптечка 💖</h1>
+          </div>
+          <p class="intro-text">
+            На цьому уроці ми вивчили подію <code>Touched</code>. Вона дозволяє
+            об'єктам реагувати на дотик гравця. Твоє головне завдання — створити
+            рятівну аптечку, яка буде відновлювати здоров'я при збиранні!
+          </p>
+          <section class="task-section">
+            <div class="task-header">
+              <h2 class="task-title">🛠️ План роботи: Створи Аптечку</h2>
+            </div>
+
+            <div class="instructions-card">
+              <ul class="task-steps">
+                <li>
+                  <strong>Дизайн:</strong> Створи деталь і розфарбуй її як
+                  аптечку (наприклад, зелений блок). Увімкни
+                  <code>Anchored</code>.
+                </li>
+                <li>
+                  <strong>Прохідність:</strong> Вимкни <code>CanCollide</code>,
+                  щоб гравець міг пройти крізь неї і «зібрати» її.
+                </li>
+                <li>
+                  <strong>Скрипт:</strong> Додай скрипт всередину аптечки та
+                  напиши функцію на подію <code>Touched</code>.
+                </li>
+                <li>
+                  <strong>Здоров'я:</strong> Знайди Humanoid та додай йому 10
+                  одиниць здоров'я. <br />
+                  <em
+                    >💡 Підказка: Згадай наше завдання із Зомбі (Завдання 8).
+                    Там ми віднімали здоров'я командою
+                    <code>Humanoid.Health -= 10</code>. Тут треба зробити те
+                    саме, але використати плюс (<code>+=</code>), щоб полікувати
+                    гравця!</em
+                  >
+                </li>
+                <li>
+                  <strong>Зникнення:</strong> Обов'язково додай команду
+                  <code>Destroy()</code> для аптечки в кінці скрипта, щоб її
+                  можна було підібрати лише один раз!
+                </li>
+              </ul>
+            </div>
+
+            <h4 style="margin-top: 30px; margin-bottom: 15px">
+              Базовий код для перевірки дотику:
+            </h4>
+            <div class="code-placeholder">
+              <button
+                class="copy-btn"
+                onclick="copyCode2(this, 'lua-code-touched')"
+              >
+                📋 Копіювати
+              </button>
+              <pre><code id="lua-code-touched"><span class="lua-keyword">local</span> item = <span class="lua-object">script.Parent</span>
+
+item.Touched:<span class="lua-func">Connect</span>(<span class="lua-keyword">function</span>(hit)
+    <span class="lua-keyword">local</span> humanoid = hit.Parent:<span class="lua-func">FindFirstChild</span>(<span class="lua-string">"Humanoid"</span>)
+    
+    <span class="lua-keyword">if</span> humanoid <span class="lua-keyword">then</span>
+        <span class="lua-comment">-- ТУТ НАПИШИ КОД ДОДАВАННЯ ЗДОРОВ'Я</span>
+        
+        <span class="lua-comment">-- ТУТ НАПИШИ КОД ЗНИЩЕННЯ АПТЕЧКИ</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>)</code></pre>
+            </div>
+
+            <details
+              class="instructions-card"
+              style="
+                margin-top: 30px;
+                background-color: rgba(56, 189, 248, 0.1);
+                border: 1px dashed #38bdf8;
+                cursor: pointer;
+              "
+            >
+              <summary
+                style="
+                  font-size: 28px;
+                  font-weight: bold;
+                  color: #38bdf8;
+                  outline: none;
+                  padding: 15px 0;
+                "
+              >
+                🔥 Додаткові завдання для ПРО-скриптерів (Натисни)
+              </summary>
+              <div
+                style="
+                  margin-top: 15px;
+                  border-top: 1px solid rgba(56, 189, 248, 0.2);
+                  padding-top: 15px;
+                "
+              >
+                <p style="color: var(--text-main); margin-bottom: 15px">
+                  Справився з аптечкою дуже швидко? Спробуй створити ще два
+                  об'єкти на базі того самого скрипту:
+                </p>
+                <ul class="task-steps" style="color: var(--text-main)">
+                  <li>
+                    <strong>💀 Кислотна калюжа (Пастка):</strong> Створи зелену
+                    плоску деталь. Напиши скрипт, який буде не лікувати, а
+                    навпаки — <strong>віднімати 20 здоров'я</strong> при дотику.
+                    Знищувати калюжу після дотику не потрібно!
+                  </li>
+                  <li style="margin-top: 10px">
+                    <strong>⚡ Енергетик (Jump Pad):</strong> Створи ще один
+                    предмет. При дотику до нього звернися до властивості
+                    <code>Humanoid.WalkSpeed</code> та встанови її на
+                    <strong>50</strong> (стандартна швидкість 16). Тепер гравець
+                    бігатиме як Флеш!
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </section>
+
+          <hr class="glow-divider" />
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Ремонт коду (Touched)</h3>
+              <p>
+                Віднови скрипт для збирання предмета! Перетягни правильні
+                команди на свої місця, щоб код запрацював без помилок. Звертай
+                увагу на те, як працює подія дотику та пошук гравця.
+              </p>
+
+              <div class="iframe-wrapper" style="margin-bottom: 25px">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/c5f80aa6906a4e288a595112e6c47f79?themeId=45&templateId=36&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Запиши відео, як ти втрачаєш здоров'я (наприклад, у лаві), а
+              потім лікуєшся своєю аптечкою.<br />
+              2️⃣ Зроби скріншот пройденого інтерактивного завдання.<br />
+              Відправ матеріали у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
 
         <div class="lock-overlay">
           <div class="lock-card">
@@ -48,5 +202,6 @@
         </div>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

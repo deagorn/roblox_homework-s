@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 14</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,28 +25,236 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
-          <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
-          <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8</a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link">Завдання 11 </a>
+          <a href="hw12.html" class="task-link">Завдання 12 </a>
+          <a href="hw13.html" class="task-link">Завдання 13 </a>
+          <a href="hw14.html" class="task-link active">Завдання 14</a>
           <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
           <a href="hw16.html" class="task-link">Завдання 16 🔒</a>
         </nav>
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 14: Платний Телепорт 💎🚪</h1>
+          </div>
 
-        <div class="lock-overlay">
+          <p class="intro-text">
+            Сьогодні ми створимо VIP-систему для твоєї гри. Гравець зможе
+            потрапити в секретну зону лише за умови, що він назбирав достатньо
+            монет. Але будь уважний: за вхід доведеться заплатити!
+          </p>
+
+          <section class="task-section">
+            <div class="task-header">
+              <h2 class="task-title">🛠️ Місія: Секретна VIP-Зона</h2>
+            </div>
+
+            <div class="instructions-card">
+              <div class="pro-mission-cards" style="margin-bottom: 30px">
+                <div
+                  class="pro-card-item pro-card-solution"
+                  style="
+                    border-left-color: #a855f7;
+                    background-color: rgba(168, 85, 247, 0.1);
+                  "
+                >
+                  <strong style="color: #a855f7"
+                    ><i class="fa-solid fa-crosshairs"></i> Твоя ціль:</strong
+                  ><br />
+                  Зробити закриту кімнату, куди пускає лише багатіїв. Щоб туди
+                  потрапити, гравець має віддати 15 монет.
+                </div>
+                <div
+                  class="pro-card-item pro-card-solution"
+                  style="
+                    border-left-color: #fdce00;
+                    background-color: rgba(253, 206, 0, 0.1);
+                  "
+                >
+                  <strong style="color: #fdce00"
+                    ><i class="fa-solid fa-coins"></i> Логіка оплати:</strong
+                  ><br />
+                  Перевірити монети ➔ Відняти 15 штук ➔ Телепортувати ➔ Дати
+                  можливість повернутися безкоштовно.
+                </div>
+              </div>
+            </div>
+            <h4 style="color: var(--text-main); margin-bottom: 15px">
+              <i class="fa-solid fa-hammer"></i> Етап 1: Будівництво
+            </h4>
+            <div class="pro-steps-container">
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #3b82f6">
+                  1
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Створи портали:</strong> Постав два звичайних Part.
+                  Перший назви
+                  <span class="pro-keyword">EntryPart</span> (Вхід), а другий —
+                  <span class="pro-keyword">ExitPart</span> (Вихід).
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #3b82f6">
+                  2
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Облаштуй таємну кімнату:</strong> Розмісти
+                  <span class="pro-keyword">ExitPart</span> дуже далеко. Побудуй
+                  навколо нього кімнату. Поклади туди нагороду (енергетик на
+                  швидкість, аптечку або бейдж).
+                </div>
+              </div>
+            </div>
+            <h4
+              style="
+                color: var(--text-main);
+                margin-top: 30px;
+                margin-bottom: 15px;
+              "
+            >
+              <i class="fa-solid fa-code"></i> Етап 2: Програмування (Скрипт
+              входу)
+            </h4>
+            <div class="pro-steps-container">
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  3
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Створи скрипт:</strong> Додай Script всередину
+                  <span class="pro-keyword">EntryPart</span>. На початку скрипта
+                  створи змінну для входу (<span class="pro-keyword"
+                    >script.Parent</span
+                  >) та знайди свій вихід через
+                  <span class="pro-keyword">workspace:WaitForChild()</span>.
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  4
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Дотик і Гравець:</strong> Напиши подію
+                  <span class="pro-keyword">Touched</span>. Знайди персонажа
+                  через <span class="pro-keyword">hit.Parent</span> та самого
+                  гравця, щоб отримати доступ до його рахунку (leaderstats).
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  5
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Перевірка VIP:</strong> Напиши умову
+                  <span class="pro-keyword">if</span>. Перевір, чи існує гравець
+                  <b>І (and)</b> чи має він
+                  <span class="pro-keyword">>= 15</span> монет.
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  6
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Оплата та Телепорт:</strong> Всередині умови відніми
+                  монети (<span class="pro-keyword">-= 15</span>) та перемісти
+                  гравця командою
+                  <span class="pro-keyword">character:MoveTo()</span>. ⚠️ Щоб не
+                  був вiчний телепорт додай вiдступу: + Vector3.new(10, 0, 0)
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  7
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Безкоштовний шлях додому:</strong> Створи
+                  <b>ДРУГИЙ новий скрипт</b>, але вже у
+                  <span class="pro-keyword">ExitPart</span>. Напиши такий самий
+                  телепорт, але без перевірки монет — нехай він просто повертає
+                  гравця до входу.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="video-section">
+            <h3 class="task-title" style="margin-bottom: 15px">
+              <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+              Відеоінструкція
+            </h3>
+            <div class="youtube-wrapper">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/_vaz_ARinb8?si=oo_QgEVrn8IS-D18"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <hr class="divider" />
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Втеча з телепорту</h3>
+              <p>
+                Вороги вже близько! 👻 Керуй своїм героєм у лабіринті та швидко
+                біжи до правильної відповіді. Тобі потрібно згадати все: як
+                пишеться команда телепорту, де лежать гроші гравця та як не
+                застрягти у підлозі!
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/f70d79ca77244bc8a207187b58faa41b?themeId=26&templateId=49&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Покажи на відео, як ти заходиш у платний телепорт (рахунок має
+              зменшитися).<br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>
             <h2>Ці домашні завдання поки недоступні.</h2>
           </div>
-        </div>
+        </div>-->
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

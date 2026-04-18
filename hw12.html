@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 12</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,11 +25,11 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8</a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link">Завдання 11 </a>
+          <a href="hw12.html" class="task-link active">Завдання 12 </a>
           <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
           <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
           <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
@@ -38,15 +38,232 @@
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 12: Диско-підлога 🕺💥</h1>
+          </div>
 
-        <div class="lock-overlay">
+          <p class="intro-text">
+            На цьому уроці ми вивчили магію нескінченності — цикл
+            <code>while true do</code>. Він дозволяє створювати об'єкти, які
+            постійно рухаються, блимають або змінюються без зупинки. Твоє
+            завдання — створити яскраву диско-підлогу для Оббі!
+          </p>
+
+          <section class="task-section">
+            <div class="task-header">
+              <h2 class="task-title">🛠️ План роботи: Диско-підлога</h2>
+            </div>
+
+            <div class="instructions-card">
+              <p>Що потрібно зробити:</p>
+              <ul class="task-steps">
+                <li>
+                  <strong>Платформа:</strong> Створи широку деталь (Part), яка
+                  буде слугувати танцювальним майданчиком. Обов'язково увімкни
+                  <code>Anchored</code>.
+                </li>
+                <li>
+                  <strong>Матеріал:</strong> Зміни матеріал платформи на
+                  <code>Neon</code>, щоб кольори світилися в темряві!
+                </li>
+                <li>
+                  <strong>Скрипт:</strong> Додай всередину платформи скрипт та
+                  відкрий його.
+                </li>
+                <li>
+                  <strong>Цикл:</strong> Напиши конструкцію
+                  <code>while true do</code>.
+                </li>
+                <li>
+                  <strong>Випадковий колір:</strong> Всередині циклу змінюй
+                  властивість <code>BrickColor</code> на
+                  <code>BrickColor.Random()</code>.
+                </li>
+                <li>
+                  <strong>Пауза:</strong> ⚠️ <strong>ОБОВ'ЯЗКОВО</strong> додай
+                  <code>wait(0.5)</code> в кінці циклу! Якщо цього не зробити,
+                  гра зависне назавжди.
+                </li>
+              </ul>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider-container" style="height: 350px">
+                <img src="img/0410.gif" alt="Перешкода" class="slide active" />
+              </div>
+            </div>
+            <details
+              class="instructions-card"
+              style="
+                margin-top: 30px;
+                background-color: rgba(239, 68, 68, 0.1);
+                border: 1px dashed #ef4444;
+                cursor: pointer;
+              "
+            >
+              <summary
+                style="
+                  font-size: 26px;
+                  font-weight: bold;
+                  color: #ef4444;
+                  outline: none;
+                  padding: 15px 0;
+                "
+              >
+                🔥 Рівень "ПРО": Платформа-привид (Натисни)
+              </summary>
+              <div
+                style="
+                  margin-top: 15px;
+                  border-top: 1px solid rgba(239, 68, 68, 0.2);
+                  padding-top: 15px;
+                "
+              >
+                <p
+                  style="
+                    color: var(--text-main);
+                    margin-bottom: 20px;
+                    font-size: 16px;
+                  "
+                >
+                  Якщо підлога стає <strong>ЧЕРВОНОЮ</strong>, вона дає 1
+                  секунду на втечу, а потім зникає на 3 секунди!
+                </p>
+
+                <div class="pro-mission-cards">
+                  <div class="pro-card-item pro-card-problem">
+                    <strong style="color: #ef4444"
+                      ><i class="fa-solid fa-triangle-exclamation"></i>
+                      Проблема:</strong
+                    ><br />
+                    У Roblox багато відтінків червоного (Bright red, Really
+                    red). Якщо перевірити лише один, пастка майже ніколи не
+                    спрацює.
+                  </div>
+                  <div class="pro-card-item pro-card-solution">
+                    <strong style="color: #38bdf8"
+                      ><i class="fa-solid fa-lightbulb"></i> Рішення:</strong
+                    ><br />
+                    Оператор <span class="pro-keyword">or</span> (або). Він
+                    дозволяє перевірити відразу КІЛЬКА кольорів в одній умові!
+                  </div>
+                </div>
+                <div class="slider-wrapper">
+                  <div class="slider-container" style="height: 350px">
+                    <img
+                      src="img/15.gif"
+                      alt="Перешкода"
+                      class="slide active"
+                    />
+                  </div>
+                </div>
+                <h4 style="color: #ef4444; margin-bottom: 15px">
+                  <i class="fa-solid fa-brain"></i> Алгоритм дій:
+                </h4>
+
+                <div class="pro-steps-container">
+                  <div class="pro-step">
+                    <div class="pro-step-number">1</div>
+                    <div style="color: var(--text-main)">
+                      У вічному циклі міняємо колір на випадковий.
+                    </div>
+                  </div>
+                  <div class="pro-step">
+                    <div class="pro-step-number">2</div>
+                    <div style="color: var(--text-main)">
+                      Запитуємо у гри через <span class="pro-keyword">if</span>:
+                      "Це Really red <strong>АБО</strong> Bright red?"
+                    </div>
+                  </div>
+                  <div class="pro-step">
+                    <div class="pro-step-number">3</div>
+                    <div style="color: var(--text-main)">
+                      Якщо "Так" — заходимо всередину умови і робимо паузу 1
+                      сек.
+                    </div>
+                  </div>
+                  <div class="pro-step">
+                    <div class="pro-step-number">4</div>
+                    <div style="color: var(--text-main)">
+                      Зникаємо (Transparency, CanCollide) ➔ чекаємо 3 сек ➔
+                      повертаємо підлогу!
+                    </div>
+                  </div>
+                </div>
+
+                <h4 style="margin-bottom: 15px; color: var(--text-main)">
+                  Скелет коду (Допиши алгоритм самостійно!):
+                </h4>
+                <div class="code-placeholder">
+                  <button
+                    class="copy-btn"
+                    onclick="copyCode2(this, 'lua-code-pro-skeleton')"
+                  >
+                    📋 Копіювати
+                  </button>
+                  <pre><code id="lua-code-pro-skeleton"><span class="lua-keyword">local</span> platforma = <span class="lua-object">script.Parent</span>
+
+<span class="lua-keyword">while</span> <span class="lua-bool">true</span> <span class="lua-keyword">do</span>
+    <span class="lua-func">wait</span>(<span class="lua-num">1</span>)
+    platforma.<span class="lua-prop">BrickColor</span> = <span class="lua-prop">BrickColor</span>.<span class="lua-func">Random</span>()
+    
+    <span class="lua-comment">-- Перевіряємо кілька відтінків через OR:</span>
+    <span class="lua-keyword">if</span> platforma.<span class="lua-prop">BrickColor</span> == <span class="lua-prop">BrickColor</span>.<span class="lua-func">new</span>(<span class="lua-string">'Really red'</span>)
+        <span class="lua-keyword">or</span> platforma.<span class="lua-prop">BrickColor</span> == <span class="lua-prop">BrickColor</span>.<span class="lua-func">new</span>(<span class="lua-string">'Bright red'</span>)
+    <span class="lua-keyword">then</span>
+        
+        <span class="lua-comment">-- 👇 ТВОЄ ЗАВДАННЯ НАПИСАТИ КОД ТУТ 👇</span>
+        
+        
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span></code></pre>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Ремонт коду (while / or)</h3>
+              <p>
+                Хтось зламав скрипт для Таємних дверей! 🕵️‍♂️ Перетягни пропущені
+                команди на свої місця, щоб відремонтувати нескінченний цикл та
+                правильно написати умову з оператором <code>or</code>.
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/4c5cd5b19b13435fafb8fafc95d61e0d?themeId=65&templateId=36&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Запиши відео, де ти стрибаєш по своїй диско-підлозі (якщо
+              зробив смертельний колір — покажи, як він працює!).<br /><br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>
             <h2>Ці домашні завдання поки недоступні.</h2>
           </div>
-        </div>
+        </div>-->
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

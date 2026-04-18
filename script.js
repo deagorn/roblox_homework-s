@@ -2,11 +2,17 @@
 const slides = document.querySelectorAll(".slide");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
+const hasSlides = slides.length > 0;
+const hasSliderControls = hasSlides && prevBtn && nextBtn;
 let currentSlide = 0;
 let slideInterval;
 
 // Функція показу конкретного слайду
 function showSlide(index) {
+  if (!hasSlides) {
+    return;
+  }
+
   slides[currentSlide].classList.remove("active");
 
   // Зациклюємо індекс: після останньої йде перша
@@ -25,86 +31,89 @@ function prevSlide() {
 
 // Запуск автоматичного перегортання (5000 мс = 5 секунд)
 function startSlider() {
+  if (!hasSliderControls || slides.length < 2) {
+    return;
+  }
+
+  clearInterval(slideInterval);
   slideInterval = setInterval(nextSlide, 5000);
 }
 
 // Скидання таймера (щоб картинка не перегорнулася відразу після ручного кліку)
 function resetSlider() {
+  if (!hasSliderControls || slides.length < 2) {
+    return;
+  }
+
   clearInterval(slideInterval);
   startSlider();
 }
 
 // Події на кнопки стрілочок
-nextBtn.addEventListener("click", () => {
-  nextSlide();
-  resetSlider();
-});
+if (hasSliderControls) {
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    resetSlider();
+  });
 
-prevBtn.addEventListener("click", () => {
-  prevSlide();
-  resetSlider();
-});
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    resetSlider();
+  });
 
-// Запускаємо таймер при завантаженні
-startSlider();
+  // Запускаємо таймер при завантаженні
+  startSlider();
+}
 
 // === ЛОГІКА МОДАЛЬНОГО ВІКНА (LIGHTBOX) ===
 const modal = document.getElementById("lightbox-modal");
 const modalImg = document.getElementById("lightbox-img");
 const closeBtn = document.querySelector(".close-btn");
+const hasLightbox = hasSlides && modal && modalImg && closeBtn;
 
 // Додаємо клік для кожної картинки у слайдері
-slides.forEach((img) => {
-  img.addEventListener("click", function () {
-    modal.classList.add("active");
-    modalImg.src = this.src; // Беремо адресу картинки, на яку клікнули
-    clearInterval(slideInterval); // Зупиняємо автоскрол слайдера, поки відкрита картинка
+if (hasLightbox) {
+  slides.forEach((img) => {
+    img.addEventListener("click", function () {
+      modal.classList.add("active");
+      modalImg.src = this.src; // Беремо адресу картинки, на яку клікнули
+      clearInterval(slideInterval); // Зупиняємо автоскрол слайдера, поки відкрита картинка
+    });
   });
-});
+
+  // Закриття хрестиком
+  closeBtn.addEventListener("click", closeModal);
+
+  // Закриття при кліку на темний фон
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Закриття кнопкою Escape
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+}
 
 // Функція закриття
 function closeModal() {
+  if (!hasLightbox) {
+    return;
+  }
+
   modal.classList.remove("active");
-  startSlider(); // Знову запускаємо автоскрол після закриття
+
+  if (hasSliderControls && slides.length > 1) {
+    startSlider(); // Знову запускаємо автоскрол після закриття
+  }
 }
-
-// Закриття хрестиком
-closeBtn.addEventListener("click", closeModal);
-
-// Закриття при кліку на темний фон
-modal.addEventListener("click", function (event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-
-// Закриття кнопкою Escape
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape" && modal.classList.contains("active")) {
-    closeModal();
-  }
-});
 // === КОПІЮВАННЯ КОДУ В БУФЕР ОБМІНУ ===
 function copyCode(btnElement) {
-  const codeText = document.getElementById("lua-code").innerText;
-
-  // Використовуємо сучасний API для буфера обміну
-  navigator.clipboard
-    .writeText(codeText)
-    .then(() => {
-      // Змінюємо текст і стиль кнопки на 2 секунди
-      const originalText = btnElement.innerText;
-      btnElement.innerText = "✅ Скопійовано!";
-      btnElement.classList.add("success");
-
-      setTimeout(() => {
-        btnElement.innerText = originalText;
-        btnElement.classList.remove("success");
-      }, 2000);
-    })
-    .catch((err) => {
-      console.error("Помилка копіювання: ", err);
-    });
+  copyCode2(btnElement, "lua-code");
 }
 // === КОПІЮВАННЯ ІНЛАЙН-КОДУ ===
 function copyInlineCode(element) {
@@ -148,13 +157,13 @@ function copyCode2(btnElement, sourceId) {
 
   // 3. Виділяємо текст у тимчасовому полі
   tempTextarea.select();
+  const originalText = btnElement.innerText;
 
   try {
     // 4. Виконуємо команду копіювання (це працює скрізь)
     document.execCommand("copy");
 
     // 5. Змінюємо текст і стиль кнопки на 2 секунди
-    const originalText = btnElement.innerText;
     btnElement.innerText = "✅ Скопійовано!";
     btnElement.classList.add("success");
 

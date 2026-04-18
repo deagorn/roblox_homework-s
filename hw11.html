@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 11</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,10 +25,10 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8</a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link active">Завдання 11 </a>
           <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
           <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
           <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
@@ -38,15 +38,240 @@
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 11: Leaderstats та Стіна-пропуск 🪙🚪</h1>
+          </div>
 
-        <div class="lock-overlay">
+          <p class="intro-text">
+            На уроці ми навчилися створювати лідерборд (рахунок) та додавати
+            бали при збиранні монет. Тепер використаємо ці бали з користю! Твоє
+            завдання — створити стіну на фініші лабіринту, яка відкриється
+            тільки тоді, коли гравець збере певну кількість монет.
+          </p>
+
+          <section class="task-section">
+            <div class="task-header">
+              <h2 class="task-title">🛠️ План роботи: Фінішні двері</h2>
+            </div>
+
+            <div class="instructions-card">
+              <p>Що потрібно зробити:</p>
+              <ul class="task-steps">
+                <li>
+                  <strong>Перешкода:</strong> Створи великий Part (стіну), який
+                  повністю перекриває вихід із твого лабіринту або перехід на
+                  наступний рівень. Не забудь увімкнути <code>Anchored</code>.
+                </li>
+                <li>
+                  <strong>Екран з інформацією:</strong> Додай всередину стіни
+                  скрипт, назви його <code>DisplayScript</code>, і встав туди
+                  шаблонний код, наведений нижче. Цей скрипт автоматично
+                  створить текст на стіні і буде показувати, скільки монет
+                  залишилося зібрати.
+                </li>
+                <div class="hints-wrapper" style="margin-top: 30px">
+                  <details class="hint-item">
+                    <summary>💡 Шаблон коду:</summary>
+                    <div class="code-placeholder">
+                      <button
+                        class="copy-btn"
+                        onclick="copyCode2(this, 'lua-code-gui')"
+                      >
+                        📋 Копіювати
+                      </button>
+                      <pre><code id="lua-code-gui"><span class="lua-keyword">local</span> wall = <span class="lua-object">script.Parent</span>
+<span class="lua-keyword">local</span> requiredCoins = <span class="lua-num">20</span> <span class="lua-comment">-- Скільки монет потрібно зібрати</span>
+
+<span class="lua-comment">-- 1. Створення екрана та тексту на стіні</span>
+<span class="lua-keyword">local</span> surfaceGui = <span class="lua-func">Instance.new</span>(<span class="lua-string">"SurfaceGui"</span>)
+surfaceGui.Face = <span class="lua-object">Enum.NormalId.Front</span> <span class="lua-comment">-- Якщо текст з іншого боку, зміни Front на Back, Left або Right</span>
+surfaceGui.Parent = wall
+
+<span class="lua-keyword">local</span> textLabel = <span class="lua-func">Instance.new</span>(<span class="lua-string">"TextLabel"</span>)
+textLabel.Size = <span class="lua-func">UDim2.new</span>(<span class="lua-num">1</span>, <span class="lua-num">0</span>, <span class="lua-num">1</span>, <span class="lua-num">0</span>)
+textLabel.BackgroundTransparency = <span class="lua-num">1</span>
+textLabel.TextColor3 = <span class="lua-func">Color3.fromRGB</span>(<span class="lua-num">255</span>, <span class="lua-num">50</span>, <span class="lua-num">50</span>)
+textLabel.TextScaled = <span class="lua-keyword">true</span>
+textLabel.Font = <span class="lua-object">Enum.Font.FredokaOne</span>
+textLabel.Text = <span class="lua-string">"Збери "</span> .. requiredCoins .. <span class="lua-string">" монет!"</span>
+textLabel.Parent = surfaceGui
+
+<span class="lua-comment">-- 2. Оновлення тексту при дотику гравця</span>
+wall.Touched:<span class="lua-func">Connect</span>(<span class="lua-keyword">function</span>(hit)
+    <span class="lua-keyword">local</span> character = hit.Parent
+    <span class="lua-keyword">local</span> player = <span class="lua-object">game.Players</span>:<span class="lua-func">FindFirstChild</span>(character.Name)
+    
+    <span class="lua-keyword">if</span> player <span class="lua-keyword">then</span>
+        <span class="lua-comment">-- УВАГА: Якщо твоя змінна лідерборду називається не "score", зміни слово нижче!</span>
+        <span class="lua-keyword">local</span> currentCoins = player.<span class="lua-prop">leaderstats</span>.score.<span class="lua-prop">Value</span> 
+        
+        <span class="lua-keyword">if</span> currentCoins < requiredCoins <span class="lua-keyword">then</span>
+            <span class="lua-keyword">local</span> leftToCollect = requiredCoins - currentCoins
+            textLabel.Text = <span class="lua-string">"Залишилося: "</span> .. leftToCollect
+        <span class="lua-keyword">end</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>)</code></pre>
+                    </div>
+                  </details>
+                </div>
+                <li>
+                  <strong>Скрипт перепустки:</strong> Створи
+                  <strong>другий (новий) скрипт</strong> у цій самій стіні. Тобі
+                  потрібно самостійно написати логіку: при дотику перевірити, чи
+                  має гравець 20 монет (або іншу кількість, яку ти вибереш).
+                  Якщо монет достатньо — стіна має бути знищена.
+                  <div class="hints-wrapper" style="margin-top: 30px">
+                    <h4>💡 Підказки для самостійного скрипта</h4>
+                    <p
+                      style="
+                        font-size: 14px;
+                        margin-bottom: 15px;
+                        color: var(--text-muted);
+                      "
+                    >
+                      Відкривай кроки по черзі, якщо не знаєш, що писати далі.
+                    </p>
+
+                    <details class="hint-item">
+                      <summary>1. Початок скрипта</summary>
+                      <p>
+                        Тобі потрібна подія дотику. Створи змінну для стіни
+                        (<code
+                          ><span class="lua-object">script.Parent</span></code
+                        >) та напиши конструкцію
+                        <code
+                          >Touched:<span class="lua-func">Connect</span>(<span
+                            class="lua-keyword"
+                            >function</span
+                          >(otherPart)</code
+                        >. Далі знайди гравця через
+                        <code
+                          >otherPart.<span class="lua-prop">Parent</span></code
+                        >
+                        та
+                        <code
+                          ><span class="lua-object">game.Players</span>:<span
+                            class="lua-func"
+                            >FindFirstChild</span
+                          >(...)</code
+                        >, як ми робили на уроці.
+                      </p>
+                    </details>
+
+                    <details class="hint-item">
+                      <summary>2. Доступ до рахунку (Leaderstats)</summary>
+                      <p>
+                        Коли ти знайшов гравця та перевірив його наявність
+                        (<code
+                          ><span class="lua-keyword">if</span> player
+                          <span class="lua-keyword">then</span></code
+                        >), звернися до його монет. Шлях такий:
+                        <code
+                          >player.<span class="lua-prop">leaderstats</span
+                          >.ТВОЯ_НАЗВА_СТАТИСТИКИ.<span class="lua-prop"
+                            >Value</span
+                          ></code
+                        >. Можеш зберегти це в окрему змінну.
+                      </p>
+                    </details>
+
+                    <details class="hint-item">
+                      <summary>3. Перевірка умови</summary>
+                      <p>
+                        Використай розгалуження. Напиши:
+                        <strong>ЯКЩО</strong> монети гравця більше або дорівнює
+                        (<code>&gt;=</code>) 20, <strong>ТОДІ</strong>...
+                      </p>
+                    </details>
+
+                    <details class="hint-item">
+                      <summary>4. Відкриття проходу</summary>
+                      <p>
+                        Всередині блоку
+                        <code><span class="lua-keyword">if</span></code> напиши
+                        команду, яка знищить стіну (команда
+                        <code>:<span class="lua-func">Destroy</span>()</code>
+                        для твоєї змінної стіни). Готово!
+                      </p>
+                    </details>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="video-section">
+            <h3 class="task-title" style="margin-bottom: 15px">
+              <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+              Відеоінструкція
+            </h3>
+            <div class="youtube-wrapper">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/-qrk14aous4?si=8tuj19hXGpA-WnEN"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <hr class="divider" />
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Термінологія Leaderstats</h3>
+              <p>
+                У програмуванні одна неправильна літера може зламати весь код!
+                Збери з літер правильні назви команд та властивостей, які ми
+                використовуємо для створення рахунку.
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/97efb74e774f444c90021e222488df0a?themeId=60&templateId=79&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Зроби відео, де ти підходиш до стіни без монет (вона пише
+              залишок), а потім збираєш 20 монет, підходиш знову — і стіна
+              зникає.<br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>
             <h2>Ці домашні завдання поки недоступні.</h2>
           </div>
-        </div>
+        </div>-->
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

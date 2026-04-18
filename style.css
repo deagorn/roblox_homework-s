@@ -1235,3 +1235,66 @@ code.inline-copy.copied {
   font-size: 15px;
   line-height: 1.6;
 }
+/* === СТИЛІ ДЛЯ ПРО-МІСІЇ === */
+.pro-mission-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.pro-card-item {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.pro-card-problem {
+  background-color: rgba(239, 68, 68, 0.15); /* Червонуватий фон */
+  border-left: 4px solid #ef4444;
+}
+
+.pro-card-solution {
+  background-color: rgba(56, 189, 248, 0.15); /* Блакитний фон */
+  border-left: 4px solid #38bdf8;
+}
+
+.pro-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.pro-step {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px 15px;
+  border-radius: 8px;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pro-step-number {
+  background-color: #ef4444;
+  color: white;
+  font-weight: 900;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px; /* Квадратні з округленими кутами виглядають більш "геймерськи" */
+  flex-shrink: 0;
+}
+
+.pro-keyword {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: monospace;
+  color: #ffc777; /* Жовтий колір для коду */
+  font-weight: bold;
+}

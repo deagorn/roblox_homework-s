@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 13</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,12 +25,12 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
-          <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8</a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link">Завдання 11 </a>
+          <a href="hw12.html" class="task-link">Завдання 12 </a>
+          <a href="hw13.html" class="task-link active">Завдання 13 </a>
           <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
           <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
           <a href="hw16.html" class="task-link">Завдання 16 🔒</a>
@@ -38,15 +38,198 @@
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 13: Цикл `for` та Сходи в небо ☁️🪜</h1>
+          </div>
 
-        <div class="lock-overlay">
+          <p class="intro-text">
+            На уроці ми навчилися створювати багато об'єктів за секунду за
+            допомогою <code>ReplicatedStorage</code> та циклу <code>for</code>.
+            Але цикл вміє не лише розкидати монетки, а й будувати! Використаємо
+            математику, щоб збудувати ідеальні сходи, які з'являтимуться прямо
+            під ногами гравця.
+          </p>
+
+          <section class="task-section">
+            <div class="task-header">
+              <h2 class="task-title">🛠️ План роботи: Магічне будівництво<</h2>
+            </div>
+
+            <div class="instructions-card">
+              <p>Що потрібно зробити:</p>
+              <ul class="task-steps">
+                <li>
+                  <strong>Створи платформу-тригер:</strong> Додай Part, який
+                  буде служити кнопкою старту. Наприклад, зелене коло на землі.
+                </li>
+                <li>
+                  <strong>Створи шаблон сходинки:</strong> Додай ще один Part.
+                  Зроби його схожим на сходинку (широким і пласким).
+                  <strong>ОБОВ'ЯЗКОВО</strong> увімкни <code>Anchored</code>!
+                  Назви цю деталь <code>StepTemplate</code>.
+                </li>
+                <li>
+                  <strong>Сховай у сховище:</strong> Перетягни твій
+                  <code>StepTemplate</code> у вікні Explorer до папки
+                  <strong>ReplicatedStorage</strong>.
+                </li>
+                <li>
+                  <strong>Напиши скрипт:</strong> Додай скрипт у свою
+                  платформу-тригер (крок 1) і запрограмуй логіку. Коли гравець
+                  торкається платформи — починається цикл, який створює 20
+                  сходинок!
+                </li>
+              </ul>
+            </div>
+            <h4 style="margin-top: 30px; margin-bottom: 15px">
+              <i class="fa-solid fa-brain"></i> Підказки для написання коду:
+            </h4>
+
+            <div class="hints-wrapper">
+              <details class="hint-item">
+                <summary>💡 Підказка 1: Початок скрипта</summary>
+                <p>
+                  Спочатку створи змінну для своєї платформи. Потім отримай
+                  доступ до <code>ReplicatedStorage</code> і знайди там свою
+                  сходинку, як ми робили на уроці з монеткою.
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>💡 Підказка 2: Дотик гравця</summary>
+                <p>
+                  Напиши функцію на подію <code>Touched</code>. Знайди
+                  <code>Humanoid</code> через <code>hit.Parent</code>. Якщо
+                  Гуманоїд є — тоді запускай будівництво!
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>💡 Підказка 3: Цикл та Клонування</summary>
+                <p>
+                  Напиши цикл
+                  <code
+                    ><span class="lua-keyword">for</span> i =
+                    <span class="lua-num">1</span>,
+                    <span class="lua-num">20</span>
+                    <span class="lua-keyword">do</span></code
+                  >. Всередині циклу створи копію сходинки командою
+                  <code><span class="lua-func">Clone</span>()</code>.
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>💡 Підказка 4: Секретна математика (Позиція)</summary>
+                <p>
+                  Щоб сходинки не з'явилися в одній точці, використай змінну
+                  <code>i</code>! <br />
+                  Напиши:
+                  <code
+                    ><span class="lua-keyword">local</span> y = i *
+                    <span class="lua-num">3</span></code
+                  >
+                  (це висота)<br />
+                  Напиши:
+                  <code
+                    ><span class="lua-keyword">local</span> z = i *
+                    <span class="lua-num">4</span></code
+                  >
+                  (це зсув вперед)<br />
+                  Тоді перша сходинка буде на висоті 3, друга — 6, третя — 9...
+                  Справжні сходи! Задай цю позицію новій сходинці.
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>💡 Підказка 5: Фінальний штрих</summary>
+                <p>
+                  Не забудь перемістити нову сходинку у
+                  <code><span class="lua-object">workspace</span></code
+                  >. Також додай
+                  <code
+                    ><span class="lua-func">wait</span>(<span class="lua-num"
+                      >0.2</span
+                    >)</code
+                  >
+                  всередину циклу, щоб бачити, як сходи будуються по черзі, а не
+                  з'являються всі миттєво.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <div class="video-section">
+            <h3 class="task-title" style="margin-bottom: 15px">
+              <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+              Відеоінструкція
+            </h3>
+            <div class="youtube-wrapper">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/q8sEWYTGzyI?si=xanV0zu83Q1lMtPD"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <hr class="divider" />
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Правда чи Брехня про Цикли</h3>
+              <p>
+                Час розвіяти міфи! Чи добре ти запам'ятав різницю між
+                нескінченним <code>while</code> та точним <code>for</code>?
+                Читай твердження на екрані та швидко вирішуй: це чиста правда чи
+                вигадка нубів!
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/6a55da85165c4a06a2bc32182266f69c?themeId=1&templateId=35&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Запиши відео, де ти стаєш на кнопку, і перед тобою ефектно
+              будуються сходи в небо!<br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>
             <h2>Ці домашні завдання поки недоступні.</h2>
           </div>
-        </div>
+        </div>-->
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
