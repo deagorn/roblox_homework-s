@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 1</title>
+    <title>Roblox ДЗ - Завдання 15</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -25,28 +25,253 @@
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
-          <a href="hw8.html" class="task-link active">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
-          <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
-          <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
-          <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8</a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link">Завдання 11 </a>
+          <a href="hw12.html" class="task-link">Завдання 12 </a>
+          <a href="hw13.html" class="task-link">Завдання 13 </a>
+          <a href="hw14.html" class="task-link">Завдання 14</a>
+          <a href="hw15.html" class="task-link active">Завдання 15 </a>
           <a href="hw16.html" class="task-link">Завдання 16 🔒</a>
         </nav>
       </aside>
 
       <main class="main-content locked">
-        <div class="content-box"></div>
+        <div class="content-box">
+          <div class="welcome-banner">
+            <h1>Завдання 15: Смертельний Патруль 🚨🤖</h1>
+          </div>
 
-        <div class="lock-overlay">
+          <p class="intro-text">
+            Настав час оживити наш лабіринт! Сьогодні ти створиш не просто
+            декорацію, а справжнього Охоронця. Він буде патрулювати територію по
+            квадрату і захищати цінний предмет. Якщо гравець потрапить йому під
+            ноги — гра почнеться спочатку!
+          </p>
+
+          <section class="task-section">
+            <div class="task-header">
+              <h2 class="task-title">🛠️ Місія: Створити Охоронця</h2>
+            </div>
+
+            <div class="pro-mission-cards" style="margin-bottom: 30px">
+              <div
+                class="pro-card-item pro-card-solution"
+                style="
+                  border-left-color: #f97316;
+                  background-color: rgba(249, 115, 22, 0.1);
+                "
+              >
+                <strong style="color: #f97316"
+                  ><i class="fa-solid fa-map-location-dot"></i> Логіка
+                  патруля:</strong
+                ><br />
+                Охоронець має нескінченно ходити між 4 точками (Part1, Part2,
+                Part3, Part4). Він має чекати, поки дійде до однієї точки, перш
+                ніж іти до наступної.
+              </div>
+              <div
+                class="pro-card-item pro-card-solution"
+                style="
+                  border-left-color: #ef4444;
+                  background-color: rgba(239, 68, 68, 0.1);
+                "
+              >
+                <strong style="color: #ef4444"
+                  ><i class="fa-solid fa-skull-crossbones"></i> Логіка
+                  небезпеки:</strong
+                ><br />
+                Поєднуємо нове зі старим: всередині Охоронця має бути скрипт на
+                дотик (Touched), який робить здоров'я гравця нулем.
+              </div>
+            </div>
+
+            <h4 style="color: var(--text-main); margin-bottom: 15px">
+              <i class="fa-solid fa-hammer"></i> Етап 1: Підготовка території
+            </h4>
+            <div class="pro-steps-container">
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #3b82f6">
+                  1
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Скарб:</strong> Постав у центрі предмет, який буде
+                  охоронятися (скриню, велику монету або кнопку).
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #3b82f6">
+                  2
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Точки маршруту:</strong> Створи 4 невеликі Part
+                  навколо скарбу (у формі квадрата). Назви їх, наприклад,
+                  <span class="pro-keyword">Part1</span>,
+                  <span class="pro-keyword">Part2</span>,
+                  <span class="pro-keyword">Part3</span>,
+                  <span class="pro-keyword">Part4</span>. ⚠️
+                  <strong>ОБОВ'ЯЗКОВО</strong> увімкни їм Anchored і зроби
+                  прозорими (Transparency = 1), щоб їх не було видно в грі.
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #3b82f6">
+                  3
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Сам Охоронець:</strong> Додай NPC (через Toolbox) та
+                  постав його біля першої точки.
+                </div>
+              </div>
+            </div>
+
+            <h4
+              style="
+                color: var(--text-main);
+                margin-top: 30px;
+                margin-bottom: 15px;
+              "
+            >
+              <i class="fa-solid fa-code"></i> Етап 2: Програмування Патруля
+            </h4>
+            <div class="pro-steps-container">
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  4
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Скрипт руху:</strong> Додай Script всередину свого
+                  NPC. Створи змінні для самого NPC (<span class="pro-keyword"
+                    >script.Parent</span
+                  >) та для всіх 4-х точок із workspace.
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  5
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Вічний цикл:</strong> Напиши
+                  <span class="pro-keyword">while true do</span>, адже охоронець
+                  має ходити без зупинки.
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  6
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Команди кроків:</strong> Всередині циклу накажи
+                  Гуманоїду йти до Part1 через
+                  <span class="pro-keyword">MoveTo()</span>. Одразу під цим
+                  рядком напиши команду очікування
+                  <span class="pro-keyword">MoveToFinished:Wait()</span>.
+                </div>
+              </div>
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #ef4444">
+                  7
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Завершення квадрата:</strong> Повтори ці дві команди
+                  для Part2, Part3 і Part4.
+                </div>
+              </div>
+            </div>
+
+            <h4 style="color: var(--text-main); margin-bottom: 15px">
+              <i class="fa-solid fa-hammer"></i> Етап 3: Нанесення урону при
+              дотику
+            </h4>
+            <div class="pro-steps-container">
+              <div class="pro-step">
+                <div class="pro-step-number" style="background-color: #10b981">
+                  8
+                </div>
+                <div style="color: var(--text-main)">
+                  <strong>Смертельний дотик:</strong> Згадай наші перші уроки!
+                  Додай ще один скрипт всередину <code>Torso</code> (або
+                  <code>HumanoidRootPart</code>) твого NPC. Напиши там класичну
+                  подію <span class="pro-keyword">Touched</span>, яка віднімає
+                  здоров'я у гравця (Health = 0).
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="video-section">
+            <h3 class="task-title" style="margin-bottom: 15px">
+              <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+              Відеоінструкція
+            </h3>
+            <div class="youtube-wrapper">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/_vaz_ARinb8?si=oo_QgEVrn8IS-D18"
+                title="YouTube video player"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <hr class="divider" />
+
+          <section class="interactive-section">
+            <div class="interactive-task">
+              <h3>🎮 Перевір себе: Кодекс Творця</h3>
+              <p>
+                Фінальне випробування для твого мозку! 🧠 Час згадати всі
+                команди, які роблять тебе справжнім розробником. Знайди
+                правильне пояснення для кожного елемента коду. Повір, якщо ти
+                пройдеш це без помилок — ти готовий до будь-яких складнощів у
+                Roblox!
+              </p>
+
+              <div class="iframe-wrapper">
+                <iframe
+                  style="max-width: 100%"
+                  src="https://wordwall.net/uk/embed/c4eb901f12e64a8dbc32f9deba3643b1?themeId=23&templateId=46&fontStackId=0"
+                  width="500"
+                  height="380"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <div class="info-box telegram-box">
+            <div class="tg-icon">📲</div>
+            <div>
+              <strong>Як здати завдання:</strong><br />
+              1️⃣ Покажи на відео, як ти заходиш у платний телепорт (рахунок має
+              зменшитися).<br />
+              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
+              Відправ фото у наш Telegram-чат.
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>
             <h2>Ці домашні завдання поки недоступні.</h2>
           </div>
-        </div>
+        </div>-->
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
