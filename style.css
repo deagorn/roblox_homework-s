@@ -108,13 +108,7 @@ body {
   margin-bottom: 20px;
 }
 
-.code-placeholder {
-  background-color: #1a1a20;
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 5px solid #ff3366;
-  color: #a0a0b0;
-}
+
 
 /* === ОВЕРЛЕЙ БЛОКУВАННЯ (Заглушка) === */
 .lock-overlay {
@@ -131,10 +125,7 @@ body {
   justify-content: center;
 }
 
-/* Показуємо оверлей, якщо main має клас 'locked' 
-.main-content.locked .lock-overlay {
-  display: flex;
-}*/
+
 
 .lock-card {
   background: linear-gradient(145deg, #2b2b36, #3a3a48);
@@ -597,41 +588,8 @@ body {
     padding: 20px;
   }
 }
-/* --- Стилі для кнопки копіювання коду --- */
-.code-placeholder {
-  position: relative; /* Важливо для позиціонування кнопки */
-  /* ... твої існуючі стилі (background-color, padding і т.д.) залишаються тут ... */
-}
 
-.copy-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #3a3a48;
-  color: #dcdcdc;
-  border: 1px solid #4facfe;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  transition: all 0.2s;
-}
 
-.copy-btn:hover {
-  background-color: #4facfe;
-  color: #ffffff;
-}
-
-.copy-btn.success {
-  background-color: #00ff88;
-  border-color: #00ff88;
-  color: #1e1e24;
-}
-/* Додаємо відступ знизу для контейнера з кодом */
-.code-placeholder {
-  margin-bottom: 40px;
-}
 
 /* Стилізація головного заголовка завдання */
 .task-title {
@@ -807,9 +765,9 @@ code.inline-copy.copied {
 /* --- Кнопка копіювання головного коду --- */
 .copy-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: rgba(255, 255, 255, 0.05); /* Напівпрозорий фон */
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
   color: #dcdcdc;
   border: 1px solid #4a4a5a;
   padding: 6px 12px;
@@ -829,52 +787,12 @@ code.inline-copy.copied {
 }
 
 .copy-btn.success {
-  background-color: #00ff88; /* Зелений при успіху */
+  background-color: #00ff88;
   color: #18181f;
   border-color: #00ff88;
   font-weight: bold;
 }
 
-/* --- Розподільник секцій (hr.divider) --- */
-.divider {
-  border: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #3a3a48, transparent);
-  margin: 40px 0;
-}
-
-/* --- Клікабельний інлайн-код (code.inline-copy) --- */
-code.inline-copy {
-  background-color: #2b2b36;
-  color: #ffaa00; /* Помаранчевий колір синтаксису */
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 4px 8px;
-  margin: 0 2px;
-  border-radius: 6px;
-  border: 1px solid #3a3a48;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: inline-block;
-}
-
-code.inline-copy:hover {
-  background-color: #3a3a48;
-  border-color: #4facfe;
-  color: #4facfe;
-  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
-}
-
-/* Стан після успішного інлайн-копіювання */
-code.inline-copy.copied {
-  background-color: #00ff88;
-  color: #1e1e24;
-  border-color: #00ff88;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-}
-
-/* --- Стилі для підказок (details + summary) --- */
 .hint-item {
   margin-bottom: 10px;
   background-color: #1e1e24;
@@ -924,73 +842,8 @@ code.inline-copy.copied {
   font-size: 16px;
   color: #dcdcdc;
 }
-/* ==========================================================================
-   СТИЛІ ДЛЯ ДЗ №8 (Код, Інтерактив, Підказки)
-   ========================================================================== */
+/* .code-placeholder и related styles уже определены выше */
 
-/* --- Головний контейнер для коду (Термінал-стиль) --- */
-.code-placeholder {
-  position: relative;
-  background-color: #18181f; /* Глибокий темний фон */
-  padding: 24px 20px 24px 24px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border-left: 6px solid #4facfe; /* Яскравий синій акцент зліва */
-}
-
-.code-placeholder pre {
-  margin: 0;
-  overflow-x: auto; /* Додає скрол, якщо код задовгий */
-}
-
-.code-placeholder code {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 16px;
-  color: #e2e2ec; /* Базовий колір тексту (наприклад, для bridge) */
-  line-height: 1.6;
-}
-
-/* --- Розподільник секцій (hr.divider) --- */
-.divider {
-  border: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #3a3a48, transparent);
-  margin: 40px 0;
-}
-
-/* --- Клікабельний інлайн-код (code.inline-copy) --- */
-code.inline-copy {
-  background-color: #2b2b36;
-  color: #ffaa00; /* Помаранчевий колір синтаксису */
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 4px 8px;
-  margin: 0 2px;
-  border-radius: 6px;
-  border: 1px solid #3a3a48;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: inline-block;
-}
-
-code.inline-copy:hover {
-  background-color: #3a3a48;
-  border-color: #4facfe;
-  color: #4facfe;
-  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
-}
-
-/* Стан після успішного інлайн-копіювання */
-code.inline-copy.copied {
-  background-color: #00ff88;
-  color: #1e1e24;
-  border-color: #00ff88;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-}
-
-/* --- Стилі для підказок (details + summary) --- */
 .hint-item {
   margin-bottom: 10px;
   background-color: #1e1e24;
@@ -1040,25 +893,6 @@ code.inline-copy.copied {
   font-size: 16px;
   color: #dcdcdc;
 }
-/* ==========================================================================
-   СТИЛІ ДЛЯ ДЗ №8 (Код, Інтерактив, Підказки)
-   ========================================================================== */
-
-/* --- Головний контейнер для коду (Термінал-стиль) --- */
-.code-placeholder {
-  position: relative;
-  background-color: #18181f; /* Глибокий темний фон */
-  padding: 24px 20px 24px 24px;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border-left: 6px solid #4facfe; /* Яскравий синій акцент зліва */
-}
-
-.code-placeholder pre {
-  margin: 0;
-  overflow-x: auto; /* Додає скрол, якщо код задовгий */
-}
 
 /* --- Розподільник секцій (hr.divider) --- */
 .divider {
@@ -1068,38 +902,6 @@ code.inline-copy.copied {
   margin: 40px 0;
 }
 
-/* --- Клікабельний інлайн-код (code.inline-copy) --- */
-code.inline-copy {
-  background-color: #2b2b36;
-  color: #ffaa00; /* Помаранчевий колір синтаксису */
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 4px 8px;
-  margin: 0 2px;
-  border-radius: 6px;
-  border: 1px solid #3a3a48;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: inline-block;
-}
-
-code.inline-copy:hover {
-  background-color: #3a3a48;
-  border-color: #4facfe;
-  color: #4facfe;
-  box-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
-}
-
-/* Стан після успішного інлайн-копіювання */
-code.inline-copy.copied {
-  background-color: #00ff88;
-  color: #1e1e24;
-  border-color: #00ff88;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-}
-
-/* --- Стилі для підказок (details + summary) --- */
 .hint-item {
   margin-bottom: 10px;
   background-color: #1e1e24;
