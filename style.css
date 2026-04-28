@@ -1443,3 +1443,52 @@ code.inline-copy.copied {
     align-items: flex-start;
   }
 }
+/* === СТИЛІ ДЛЯ ФІНАЛЬНОГО ВИПРОБУВАННЯ (ЗАВДАННЯ 16) === */
+.final-exam-card {
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.05) 0%,
+    rgba(245, 158, 11, 0.15) 100%
+  );
+  border: 2px dashed rgba(251, 191, 36, 0.5);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.final-exam-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.25);
+  border-color: rgba(251, 191, 36, 0.9);
+}
+
+.final-exam-title {
+  color: #fbbf24;
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Додаємо світіння для іконки */
+.final-exam-title i {
+  font-size: 24px;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6));
+}
+
+.final-exam-text {
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0; /* Відступ вже заданий у самій картці (padding) */
+}
