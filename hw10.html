@@ -13,10 +13,8 @@
   <body>
     <div class="app-container">
       <aside class="sidebar">
-        <div class="logo">
-          <h2>🎮 Roblox ДЗ</h2>
-        </div>
-        <nav class="task-list">
+        <div class="logo"><h2>🎮 Roblox ДЗ</h2></div>
+        <nav class="task-list" aria-label="Домашні завдання">
           <a href="hw1.html" class="task-link">Завдання 1</a>
           <a href="hw2.html" class="task-link">Завдання 2</a>
           <a href="hw3.html" class="task-link">Завдання 3</a>
@@ -24,88 +22,262 @@
           <a href="hw5.html" class="task-link">Завдання 5</a>
           <a href="hw6.html" class="task-link">Завдання 6</a>
           <a href="hw7.html" class="task-link">Завдання 7</a>
-
-          <a href="hw8.html" class="task-link">Завдання 8 </a>
-          <a href="hw9.html" class="task-link">Завдання 9 </a>
-          <a href="hw10.html" class="task-link active">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
-          <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
-          <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
-          <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
-          <a href="hw16.html" class="task-link">Завдання 16 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8</a>
+          <a href="hw9.html" class="task-link">Завдання 9</a>
+          <a href="hw10.html" class="task-link active" aria-current="page"
+            >Завдання 10</a
+          >
+          <a href="hw11.html" class="task-link">Завдання 11</a>
+          <a href="hw12.html" class="task-link">Завдання 12</a>
+          <a href="hw13.html" class="task-link">Завдання 13</a>
+          <a href="hw14.html" class="task-link">Завдання 14</a>
+          <a href="hw15.html" class="task-link">Завдання 15</a>
+          <a href="hw16.html" class="task-link">Завдання 16</a>
         </nav>
       </aside>
 
       <main class="main-content locked">
         <div class="content-box">
-          <h1>Завдання 10: Подія дотику та Аптечка 💖</h1>
-
+          <h1>Завдання 10: Рятівна аптечка 💖</h1>
           <p class="intro-text">
-            На цьому уроці ми вивчили подію <code>Touched</code>. Вона дозволяє
-            об'єктам реагувати на дотик гравця. Твоє головне завдання — створити
-            рятівну аптечку, яка буде відновлювати здоров'я при збиранні!
+            На цьому уроці ми вивчили подію Touched. Вона дозволяє об'єктам
+            реагувати на дотик гравця. Твоє головне завдання — створити рятівну
+            аптечку, яка буде відновлювати здоров'я при збиранні!
           </p>
+
           <section class="task-section">
             <div class="task-header">
               <h2 class="task-title">🛠️ План роботи: Створи Аптечку</h2>
             </div>
-
             <div class="instructions-card">
-              <ul class="task-steps">
-                <li>
-                  <strong>Дизайн:</strong> Створи деталь і розфарбуй її як
-                  аптечку (наприклад, зелений блок). Увімкни
-                  <code>Anchored</code>.
-                </li>
-                <li>
-                  <strong>Прохідність:</strong> Вимкни <code>CanCollide</code>,
-                  щоб гравець міг пройти крізь неї і «зібрати» її.
-                </li>
-                <li>
-                  <strong>Скрипт:</strong> Додай скрипт всередину аптечки та
-                  напиши функцію на подію <code>Touched</code>.
-                </li>
-                <li>
-                  <strong>Здоров'я:</strong> Знайди Humanoid та додай йому 10
-                  одиниць здоров'я. <br />
-                  <em
-                    >💡 Підказка: Згадай наше завдання із Зомбі (Завдання 8).
-                    Там ми віднімали здоров'я командою
-                    <code>Humanoid.Health -= 10</code>. Тут треба зробити те
-                    саме, але використати плюс (<code>+=</code>), щоб полікувати
-                    гравця!</em
-                  >
-                </li>
-                <li>
-                  <strong>Зникнення:</strong> Обов'язково додай команду
-                  <code>Destroy()</code> для аптечки в кінці скрипта, щоб її
-                  можна було підібрати лише один раз!
-                </li>
-              </ul>
-            </div>
+              <div class="hints-wrapper">
+                <h4>💡 Відкривай кроки по черзі:</h4>
+                <details class="hint-item">
+                  <summary>Крок 1 — створи аптечку</summary>
+                  <p>
+                    Додай
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Part</span></code
+                    >
+                    і зроби його зеленим. Увімкни
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-prop">Anchored</span></code
+                    >, щоб аптечка не падала.
+                  </p>
+                </details>
 
-            <h4 style="margin-top: 30px; margin-bottom: 15px">
-              Базовий код для перевірки дотику:
-            </h4>
-            <div class="code-placeholder">
-              <button
-                class="copy-btn"
-                onclick="copyCode2(this, 'lua-code-touched')"
-              >
-                📋 Копіювати
-              </button>
-              <pre><code id="lua-code-touched"><span class="lua-keyword">local</span> item = <span class="lua-object">script.Parent</span>
+                <details class="hint-item">
+                  <summary>Крок 2 — дозволь пройти крізь неї</summary>
+                  <p>
+                    У
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Properties</span></code
+                    >
+                    вимкни
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-prop">CanCollide</span></code
+                    >. Гравець зможе пройти крізь аптечку та підібрати її.
+                  </p>
+                </details>
 
-item.Touched:<span class="lua-func">Connect</span>(<span class="lua-keyword">function</span>(hit)
-    <span class="lua-keyword">local</span> humanoid = hit.Parent:<span class="lua-func">FindFirstChild</span>(<span class="lua-string">"Humanoid"</span>)
-    
-    <span class="lua-keyword">if</span> humanoid <span class="lua-keyword">then</span>
-        <span class="lua-comment">-- ТУТ НАПИШИ КОД ДОДАВАННЯ ЗДОРОВ'Я</span>
-        
-        <span class="lua-comment">-- ТУТ НАПИШИ КОД ЗНИЩЕННЯ АПТЕЧКИ</span>
-    <span class="lua-keyword">end</span>
-<span class="lua-keyword">end</span>)</code></pre>
+                <details class="hint-item">
+                  <summary>Крок 3 — підготуй скрипт</summary>
+                  <p>
+                    Через плюс біля аптечки в
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Explorer</span></code
+                    >
+                    додай звичайний
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Script</span></code
+                    >. Відкрий його, видали початковий код і напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">local</span> item =
+                      <span class="lua-object">script</span>.<span
+                        class="lua-object"
+                        >Parent</span
+                      ></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >item</code
+                    >
+                    — це наша аптечка.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 4 — додай реакцію на дотик</summary>
+                  <p>
+                    З нового рядка напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >item.<span class="lua-object">Touched</span>:<span
+                        class="lua-func"
+                        >Connect</span
+                      >(<span class="lua-keyword">function</span>(hit)</code
+                    ><br />Код усередині запуститься при дотику.
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >hit</code
+                    >
+                    — деталь, яка торкнулася аптечки.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 5 — знайди Humanoid</summary>
+                  <p>
+                    Усередині обробника дотику напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">local</span> humanoid =
+                      hit.<span class="lua-object">Parent</span>:<span
+                        class="lua-func"
+                        >FindFirstChild</span
+                      >(<span class="lua-string">&quot;Humanoid&quot;</span
+                      >)</code
+                    ><br />Шукаємо
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Humanoid</span></code
+                    >
+                    в об’єкті, який торкнувся аптечки.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 6 — перевір, чи його знайдено</summary>
+                  <p>
+                    Нижче напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">if</span> humanoid
+                      <span class="lua-keyword">then</span></code
+                    ><br />Якщо
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Humanoid</span></code
+                    >
+                    знайдено — виконаємо команди кроків 7 і 8. Напиши їх
+                    усередині цієї умови.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 7 — додай 10 здоров’я</summary>
+                  <p>
+                    Усередині
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">if</span></code
+                    >
+                    напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >humanoid.<span class="lua-prop">Health</span> +=
+                      <span class="lua-num">10</span></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >+=</code
+                    >
+                    додає здоров’я. У завданні із зомбі ми його віднімали, а тут
+                    — лікуємо!
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 8 — прибери зібрану аптечку</summary>
+                  <p>
+                    Одразу під лікуванням, також усередині
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">if</span></code
+                    >, напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >item:<span class="lua-func">Destroy</span>()</code
+                    ><br />Аптечка зникне після збирання.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 9 — закрий умову й обробник</summary>
+                  <p>
+                    Додай наприкінці два окремі рядки:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">end</span></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">end</span>)</code
+                    ><br />Перший закриває
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">if</span></code
+                    >, другий — обробник дотику.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 10 — перевір аптечку</summary>
+                  <p>
+                    Натисни
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >Play</code
+                    >. Спочатку отримай трохи шкоди, наприклад від зомбі, та
+                    виживи. Потім торкнися аптечки: здоров’я має зрости на 10, а
+                    аптечка — зникнути. Якщо бракує менше ніж 10 здоров’я, воно
+                    відновиться до максимуму.
+                  </p>
+                </details>
+              </div>
             </div>
 
             <details
@@ -126,7 +298,7 @@ item.Touched:<span class="lua-func">Connect</span>(<span class="lua-keyword">fun
                   padding: 15px 0;
                 "
               >
-                🔥 Додаткові завдання для ПРО-скриптерів (Натисни)
+                🔥 Додаткові завдання — за бажанням
               </summary>
               <div
                 style="
@@ -135,25 +307,55 @@ item.Touched:<span class="lua-func">Connect</span>(<span class="lua-keyword">fun
                   padding-top: 15px;
                 "
               >
-                <p style="color: var(--text-main); margin-bottom: 15px">
-                  Справився з аптечкою дуже швидко? Спробуй створити ще два
-                  об'єкти на базі того самого скрипту:
-                </p>
-                <ul class="task-steps" style="color: var(--text-main)">
-                  <li>
-                    <strong>💀 Кислотна калюжа (Пастка):</strong> Створи зелену
-                    плоску деталь. Напиши скрипт, який буде не лікувати, а
-                    навпаки — <strong>віднімати 20 здоров'я</strong> при дотику.
-                    Знищувати калюжу після дотику не потрібно!
-                  </li>
-                  <li style="margin-top: 10px">
-                    <strong>⚡ Енергетик (Jump Pad):</strong> Створи ще один
-                    предмет. При дотику до нього звернися до властивості
-                    <code>Humanoid.WalkSpeed</code> та встанови її на
-                    <strong>50</strong> (стандартна швидкість 16). Тепер гравець
-                    бігатиме як Флеш!
-                  </li>
-                </ul>
+                <details class="hint-item">
+                  <summary>💀 Кислотна калюжа</summary>
+                  <p>
+                    Створи плоский зелений
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Part</span></code
+                    >. Скопіюй у нього скрипт аптечки. Заміни лікування на
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >humanoid.<span class="lua-prop">Health</span> -=
+                      <span class="lua-num">20</span></code
+                    >
+                    та видали
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >item:<span class="lua-func">Destroy</span>()</code
+                    >. Калюжа забиратиме здоров’я при дотику й залишатиметься на
+                    місці. Повторні торкання можуть знімати здоров’я знову.
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>⚡ Енергетик швидкості</summary>
+                  <p>
+                    Створи ще один предмет і скопіюй у нього скрипт аптечки.
+                    Заміни лікування на
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >humanoid.<span class="lua-prop">WalkSpeed</span> =
+                      <span class="lua-num">50</span></code
+                    >. Команду
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >item:<span class="lua-func">Destroy</span>()</code
+                    >
+                    залиш. Після збирання предмет зникне, а персонаж бігатиме
+                    швидше.
+                  </p>
+                </details>
               </div>
             </details>
           </section>
@@ -163,17 +365,16 @@ item.Touched:<span class="lua-func">Connect</span>(<span class="lua-keyword">fun
             <div class="interactive-task">
               <h3>🎮 Перевір себе: Ремонт коду (Touched)</h3>
               <p>
-                Віднови скрипт для збирання предмета! Перетягни правильні
-                команди на свої місця, щоб код запрацював без помилок. Звертай
-                увагу на те, як працює подія дотику та пошук гравця.
+                Полагодь скрипт для збирання предмета! Перетягни потрібні
+                команди на свої місця.
               </p>
-
               <div class="iframe-wrapper" style="margin-bottom: 25px">
                 <iframe
                   style="max-width: 100%"
-                  src="https://wordwall.net/uk/embed/c5f80aa6906a4e288a595112e6c47f79?themeId=45&templateId=36&fontStackId=0"
+                  src="https://wordwall.net/uk/embed/c5f80aa6906a4e288a595112e6c47f79?themeId=45&amp;templateId=36&amp;fontStackId=0"
                   width="500"
                   height="380"
+                  title="Wordwall: віднови код збирання предмета"
                   frameborder="0"
                   allowfullscreen
                 ></iframe>
@@ -185,14 +386,13 @@ item.Touched:<span class="lua-func">Connect</span>(<span class="lua-keyword">fun
             <div class="tg-icon">📲</div>
             <div>
               <strong>Як здати завдання:</strong><br />
-              1️⃣ Запиши відео, як ти втрачаєш здоров'я (наприклад, у лаві), а
-              потім лікуєшся своєю аптечкою.<br />
-              2️⃣ Зроби скріншот пройденого інтерактивного завдання.<br />
-              Відправ матеріали у наш Telegram-чат.
+              🎥 Запиши коротке відео: втрачаєш частину здоров’я → збираєш
+              аптечку → лікуєшся.<br />
+              🎮 Додай скріншот результату міні-гри.<br />
+              Надішли відео та скріншот у наш Telegram-чат.
             </div>
           </div>
         </div>
-
         <div class="lock-overlay">
           <div class="lock-card">
             <div class="lock-icon">🛑</div>

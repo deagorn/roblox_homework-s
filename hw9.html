@@ -30,14 +30,14 @@
           <a href="hw7.html" class="task-link">Завдання 7</a>
 
           <a href="hw8.html" class="task-link">Завдання 8 </a>
-          <a href="hw9.html" class="task-link active">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
-          <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
-          <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
-          <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
-          <a href="hw16.html" class="task-link">Завдання 16 🔒</a>
+          <a href="hw9.html" class="task-link active">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link">Завдання 11 </a>
+          <a href="hw12.html" class="task-link">Завдання 12 </a>
+          <a href="hw13.html" class="task-link">Завдання 13 </a>
+          <a href="hw14.html" class="task-link">Завдання 14 </a>
+          <a href="hw15.html" class="task-link">Завдання 15 </a>
+          <a href="hw16.html" class="task-link">Завдання 16 </a>
         </nav>
       </aside>
 
@@ -45,147 +45,286 @@
         <div class="content-box">
           <h1>Завдання 9: Магічна Платформа 🔀👻</h1>
           <p class="intro-text">
-            На цьому уроці ми вивчили основу логіки програмування — розгалуження
-            (умови <code>if ... then</code>). Твоє завдання — використати ці
-            знання, щоб створити для свого Оббі «магічну платформу», яка
-            проявляється у світі, тільки якщо на неї багато клікати!
+            Клікни на платформу <strong>10 разів</strong>, щоб зробити її
+            видимою й твердою. Через <strong>10 секунд</strong> вона знову
+            зникне. Тоді її можна активувати ще раз!
           </p>
 
           <section class="task-section">
             <div class="task-header">
-              <div
-                class="task-icon-wrapper"
-                style="background-color: var(--accent-blue)"
-              ></div>
-              <h2 class="task-title">
-                🛠️ План роботи: Створи платформу-привида
-              </h2>
+              <h2 class="task-title">🛠️ Створи платформу-привида</h2>
             </div>
 
             <div class="instructions-card">
               <div class="hints-wrapper">
-                <h4>
-                  💡 Кроки виконання завдання (натисни на крок, щоб відкрити):
-                </h4>
+                <h4>💡 Відкривай кроки по черзі:</h4>
 
                 <details class="hint-item">
-                  <summary>Крок 1</summary>
+                  <summary>Крок 1 — додай платформу</summary>
                   <p>
-                    <strong>Створення платформи:</strong> Додай звичайний Part у
-                    своє Оббі. Обов'язково увімкни Anchored, щоб платформа
-                    висіла в повітрі і не впала.
-                  </p>
-                </details>
-
-                <details class="hint-item">
-                  <summary>Крок 2</summary>
-                  <p>
-                    <strong>Властивості привида:</strong> У вікні Properties
-                    зроби її повністю прозорою (знайди Transparency і напиши 1)
-                    та вимкни фізичне зіткнення (зніми галочку з CanCollide).
-                    Тепер через неї можна провалитися.
-                  </p>
-                </details>
-
-                <details class="hint-item">
-                  <summary>Крок 3</summary>
-                  <p>
-                    <strong>Додавання інструментів:</strong> У вікні Explorer
-                    знайди свою платформу і додай всередину неї два об'єкти:
-                    ClickDetector та Script.
-                  </p>
-                </details>
-
-                <details class="hint-item">
-                  <summary>Крок 4</summary>
-                  <p>
-                    <strong>Змінна-лічильник:</strong> Відкрий скрипт. Створи
-                    змінну для платформи, а також змінну, яка буде рахувати
-                    кліки (наприклад,
+                    Додай
                     <code
                       class="inline-copy"
                       onclick="copyInlineCode(this)"
                       title="Натисни, щоб скопіювати"
-                      >local click = 0</code
-                    >). Вона має бути на самому початку, до функції.
+                      ><span class="lua-object">Part</span></code
+                    >
+                    у своє Obby та постав його між двома платформами. Увімкни
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-prop">Anchored</span></code
+                    >, щоб він не падав.
                   </p>
                 </details>
 
                 <details class="hint-item">
-                  <summary>Крок 5</summary>
+                  <summary>Крок 2 — зроби її привидом</summary>
                   <p>
-                    <strong>Функція кліку:</strong> Напиши подію
+                    У
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >Properties</code
+                    >
+                    постав
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-prop">Transparency</span> =
+                      <span class="lua-num">1</span></code
+                    >
+                    і вимкни
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-prop">CanCollide</span></code
+                    >. Платформу не буде видно, і на ній поки не можна стояти.
+                  </p>
+                </details>
 
+                <details class="hint-item">
+                  <summary>Крок 3 — додай об’єкти для коду</summary>
+                  <p>
+                    В
                     <code
                       class="inline-copy"
                       onclick="copyInlineCode(this)"
                       title="Натисни, щоб скопіювати"
-                      >MouseClick:Connect(function()</code
-                    >, яка буде запускати код щоразу, коли гравець натискає на
-                    платформу.
+                      >Explorer</code
+                    >
+                    натисни плюс біля платформи. Додай всередину
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">ClickDetector</span></code
+                    >
+                    і звичайний
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-object">Script</span></code
+                    >.
                   </p>
                 </details>
 
                 <details class="hint-item">
-                  <summary>Крок 6</summary>
+                  <summary>Крок 4 — підготуй скрипт</summary>
                   <p>
-                    <strong>Проявлення платформи:</strong> Всередині функції
-                    напиши математику: при кожному кліку додавай +1 до
-                    лічильника (
+                    Відкрий
                     <code
                       class="inline-copy"
                       onclick="copyInlineCode(this)"
                       title="Натисни, щоб скопіювати"
-                      >click = click + 1</code
-                    >) та віднімай 0.1 від прозорості (<code
+                      ><span class="lua-object">Script</span></code
+                    >
+                    та видали початковий код. Напиши два рядки:<br /><code
                       class="inline-copy"
                       onclick="copyInlineCode(this)"
                       title="Натисни, щоб скопіювати"
-                      >Transparency = Transparency - 0.1</code
-                    >).
-                  </p>
-                </details>
-                <details class="hint-item">
-                  <summary>Крок 7</summary>
-                  <p>
-                    <strong>Умова (Розгалуження):</strong> Одразу під
-                    математикою додай перевірку if:
-                    <strong>ЯКЩО</strong> кількість кліків дорівнює 10 (<code
-                      >click == 10</code
-                    >), <strong>ТОДІ</strong> виконуємо наступний крок.
-                  </p>
-                </details>
-                <details class="hint-item">
-                  <summary>Крок 8</summary>
-                  <p>
-                    <strong>Тверда платформа:</strong> Всередині блоку if
-                    увімкни зіткнення (
+                      ><span class="lua-keyword">local</span> platform =
+                      <span class="lua-object">script</span>.<span
+                        class="lua-object"
+                        >Parent</span
+                      ></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">local</span> click =
+                      <span class="lua-num">0</span></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >platform</code
+                    >
+                    — наша платформа, а
                     <code
                       class="inline-copy"
                       onclick="copyInlineCode(this)"
                       title="Натисни, щоб скопіювати"
-                      >CanCollide = true</code
-                    >). Тепер гравець може на неї стрибнути.
+                      >click</code
+                    >
+                    рахує кліки.
                   </p>
                 </details>
+
                 <details class="hint-item">
-                  <summary>Крок 9</summary>
+                  <summary>Крок 5 — додай реакцію на клік</summary>
                   <p>
-                    <strong>Таймер та скидання:</strong> Щоб ускладнити гру,
-                    одразу після увімкнення зіткнення додай
+                    Нижче напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >platform.<span class="lua-object">ClickDetector</span
+                      >.<span class="lua-object">MouseClick</span>:<span
+                        class="lua-func"
+                        >Connect</span
+                      >(<span class="lua-keyword">function</span>()</code
+                    ><br />Наприкінці закрий цей блок рядком
                     <code
                       class="inline-copy"
                       onclick="copyInlineCode(this)"
                       title="Натисни, щоб скопіювати"
-                      >wait(10)</code
-                    >. Після паузи поверни все назад: прозорість на 1,
-                    CanCollide вимкнено, а змінну click обнули (до 0<).
+                      ><span class="lua-keyword">end</span>)</code
+                    >. Команди наступних кроків пиши
+                    <b>між цими двома рядками</b>.
+                  </p>
+                </details>
+
+                <details class="hint-item">
+                  <summary>Крок 6 — рахуй кліки та змінюй прозорість</summary>
+                  <p>
+                    Усередині обробника кліку напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >click = click + <span class="lua-num">1</span></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >platform.<span class="lua-prop">Transparency</span> =
+                      platform.<span class="lua-prop">Transparency</span> -
+                      <span class="lua-num">0.1</span></code
+                    ><br />Кожен клік додає <b>1</b> до лічильника й робить
+                    платформу помітнішою.
                   </p>
                 </details>
                 <details class="hint-item">
-                  <summary>Крок 10</summary>
+                  <summary>Крок 7 — перевір кількість кліків</summary>
                   <p>
-                    <strong> Підказка до коду:</strong>
+                    Під цими командами напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">if</span> click ==
+                      <span class="lua-num">10</span>
+                      <span class="lua-keyword">then</span></code
+                    ><br />Це означає:
+                    <b>якщо кліків 10 — виконай команди нижче</b>. Закрий умову
+                    словом
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">end</span></code
+                    >
+                    перед останнім
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">end</span>)</code
+                    >.
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>Крок 8 — увімкни тверду платформу</summary>
+                  <p>
+                    Усередині
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">if</span></code
+                    >, перед його
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">end</span></code
+                    >, напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >platform.<span class="lua-prop">CanCollide</span> =
+                      <span class="lua-bool">true</span></code
+                    ><br />Після десятого кліку на платформі можна стояти.
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>Крок 9 — сховай її через 10 секунд</summary>
+                  <p>
+                    Одразу після попередньої команди, також усередині
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">if</span></code
+                    >, напиши:<br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-func">wait</span>(<span class="lua-num"
+                        >10</span
+                      >)</code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >platform.<span class="lua-prop">Transparency</span> =
+                      <span class="lua-num">1</span></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >platform.<span class="lua-prop">CanCollide</span> =
+                      <span class="lua-bool">false</span></code
+                    ><br /><code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >click = <span class="lua-num">0</span></code
+                    ><br />Чекаємо 10 секунд, ховаємо платформу, вимикаємо
+                    зіткнення та скидаємо кліки до нуля.
+                  </p>
+                </details>
+                <details class="hint-item">
+                  <summary>Крок 10 — звір код і перевір гру</summary>
+                  <p>
+                    Звір свій код із прикладом. Зверни увагу на два завершення:
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">end</span></code
+                    >
+                    для умови та
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      ><span class="lua-keyword">end</span>)</code
+                    >
+                    для обробника кліку.
                   </p>
                   <div class="code-placeholder">
                     <button
@@ -210,6 +349,17 @@ platform.<span class="lua-object">ClickDetector.MouseClick:</span><span class="l
     <span class="lua-keyword">end</span>
 <span class="lua-keyword">end</span>)</code></pre>
                   </div>
+                  <p>
+                    Натисни
+                    <code
+                      class="inline-copy"
+                      onclick="copyInlineCode(this)"
+                      title="Натисни, щоб скопіювати"
+                      >Play</code
+                    >. Стань на сусідню платформу й клікни 10 разів у місце, де
+                    захована твоя платформа. Перевір, чи вона стає твердою, а
+                    через 10 секунд знову зникає.
+                  </p>
                 </details>
               </div>
             </div>
@@ -247,8 +397,21 @@ platform.<span class="lua-object">ClickDetector.MouseClick:</span><span class="l
             <div class="interactive-task">
               <h3>🎮 Перевір себе: Логіка if / then</h3>
               <p>
-                Закріпи свої знання про написання умов та використання
-                операторів дорівнює (==).
+                Потренуйся читати умови
+                <code
+                  class="inline-copy"
+                  onclick="copyInlineCode(this)"
+                  title="Натисни, щоб скопіювати"
+                  ><span class="lua-keyword">if</span> /
+                  <span class="lua-keyword">then</span></code
+                >
+                та перевірку «дорівнює» —
+                <code
+                  class="inline-copy"
+                  onclick="copyInlineCode(this)"
+                  title="Натисни, щоб скопіювати"
+                  >==</code
+                >.
               </p>
 
               <div class="iframe-wrapper">
@@ -268,10 +431,10 @@ platform.<span class="lua-object">ClickDetector.MouseClick:</span><span class="l
             <div class="tg-icon">📲</div>
             <div>
               <strong>Як здати завдання:</strong><br />
-              1️⃣ Запиши коротке відео, де ти клікаєш на платформу 10 разів, і
-              вона стає твердою.<br />
-              2️⃣ Обов'язково зроби скріншоти результату в міні-іграх.<br />
-              Відправ фото у наш Telegram-чат.
+              1️⃣ Запиши відео: 10 кліків → платформа тверда → через 10 секунд
+              знову зникає.<br />
+              2️⃣ Додай скріншот результату міні-гри.<br />
+              Надішли відео та скріншот у наш Telegram-чат.
             </div>
           </div>
         </div>

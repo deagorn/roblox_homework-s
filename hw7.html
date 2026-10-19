@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 7</title>
+    <title>Roblox ДЗ — Завдання 7: Встигни пройти!</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
@@ -20,76 +20,157 @@
         <div class="logo">
           <h2>🎮 Roblox ДЗ</h2>
         </div>
-        <nav class="task-list">
+        <nav class="task-list" aria-label="Домашні завдання">
           <a href="hw1.html" class="task-link">Завдання 1</a>
           <a href="hw2.html" class="task-link">Завдання 2</a>
           <a href="hw3.html" class="task-link">Завдання 3</a>
           <a href="hw4.html" class="task-link">Завдання 4</a>
           <a href="hw5.html" class="task-link">Завдання 5</a>
           <a href="hw6.html" class="task-link">Завдання 6</a>
-          <a href="hw7.html" class="task-link active">Завдання 7</a>
+          <a href="hw7.html" class="task-link active" aria-current="page"
+            >Завдання 7</a
+          >
 
-          <a href="hw8.html" class="task-link">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
-          <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
-          <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
-          <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
-          <a href="hw16.html" class="task-link">Завдання 16 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 </a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link">Завдання 11 </a>
+          <a href="hw12.html" class="task-link">Завдання 12 </a>
+          <a href="hw13.html" class="task-link">Завдання 13 </a>
+          <a href="hw14.html" class="task-link">Завдання 14 </a>
+          <a href="hw15.html" class="task-link">Завдання 15 </a>
+          <a href="hw16.html" class="task-link">Завдання 16 </a>
         </nav>
       </aside>
 
       <main class="main-content locked">
         <div class="content-box">
-          <h1>Завдання 7: Скриптовий Міст та Кольори 🏗️🎨</h1>
-
+          <h1>Завдання 7: Встигни пройти! ⏳</h1>
           <p>
-            На цьому уроці ми вивчили, як змінювати фізичні параметри об'єктів
-            (колір, розмір) прямо під час гри за допомогою скриптів. Твоє
-            завдання — застосувати ці знання, щоб допомогти гравцю подолати
-            перешкоду.
+            Додай до свого лабіринту стіну-сюрприз! Спочатку прохід відкритий, а
+            через <strong>30 секунд</strong>
+            стіна з’являється й перекриває дорогу.
           </p>
 
           <section class="task-section">
-            <h2 class="task-title">
-              🛠️ Твоє завдання: Побудуй міст-трансформер
-            </h2>
-            <p>
-              Створи в лабіринті ділянку з лавою, яку неможливо перестрибнути.
-              Напиши скрипт для маленького блоку, який за часом перетвориться на
-              довгий міст через цю лаву.
-            </p>
+            <h2 class="task-title">🛠️ Що потрібно зробити:</h2>
+            <ol class="task-steps">
+              <li>
+                🧱 <strong>Постав стіну в прохід лабіринту.</strong> Увімкни
+                <b>Anchored</b> і <b>CanCollide</b>.
+              </li>
+              <li>
+                💻 <strong>Додай усередину стіни звичайний Script.</strong>
+                Видали початковий код і напиши свій за підказками нижче.
+              </li>
+              <li>
+                🎮 <strong>Натисни Play.</strong>
+                Перевір: спочатку можна пройти, а через 30 секунд дорогу
+                перекриває стіна.
+              </li>
+            </ol>
 
-            <ul class="task-steps">
-              <li>
-                <b>1. Небезпечна Лава (Toolbox):</b> Відкрий Тулбокс, знайди
-                "Killing Lava". Додай її в лабіринт. Обов'язково запусти гру і
-                перевір, чи вона вбиває твого персонажа!
-              </li>
-              <li>
-                <b>2. Розміщення:</b> Постав цю лаву в прохід в лабіринті, щоб
-                її не можна було перестрибнути.
-              </li>
-              <li>
-                <b>3. Основа Мосту:</b> Створи маленький звичайний парт. Назви
-                його "Bridge". Розмісти його *поверх* лави. Він має бути дуже
-                маленьким, щоб через нього не можна було пройти.
-              </li>
-              <li>
-                <b>4. Активація (Скрипт):</b> Напиши скрипт всередині "Bridge",
-                який через 5 секунд збільшує його розмір, щоб він перекрив лаву
-                і став мостом.
-              </li>
-              <li>
-                <b>5. Зникнення:</b> Ще через кілька секунд скрипт має повернути
-                блоку його початковий маленький розмір.
-              </li>
-            </ul>
-            <div class="video-section">
+            <div class="hints-wrapper">
+              <h4>💡 Підказки (натисни на рядок, щоб відкрити):</h4>
+              <p>
+                Пиши команди в одному скрипті зверху вниз. На код можна
+                натиснути, щоб скопіювати.
+              </p>
+
+              <details class="hint-item">
+                <summary>Рядок 1 — знайди стіну</summary>
+                <p>
+                  Напиши з нового рядка:<br />
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >local wall = script.Parent</code
+                  ><br />
+                  Назвемо стіну <b>wall</b>.
+                  <br />
+                  <b> script.Parent</b> — це блок, усередині якого лежить
+                  скрипт.
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Рядок 2 — запам’ятай її розмір</summary>
+                <p>
+                  Напиши з нового рядка:<br />
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >local wallSize = wall.Size</code
+                  ><br />
+                  Збережемо початковий розмір у <b>wallSize</b>. Цей рядок має
+                  бути <b>перед зменшенням стіни</b>!
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Рядок 3 — зменш стіну</summary>
+                <p>
+                  Напиши з нового рядка:<br />
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >wall.Size = Vector3.new(0,0,0)</code
+                  ><br />
+                  Стіна стане дуже маленькою, майже непомітною. Прохід
+                  відкриється.
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Рядок 4 — зачекай 30 секунд</summary>
+                <p>
+                  Напиши з нового рядка:<br />
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >wait(30)</code
+                  ><br />
+                  Скрипт зачекає <b>30 секунд</b>. За цей час гравець може
+                  пройти далі.
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Рядок 5 — поверни стіну</summary>
+                <p>
+                  Напиши з нового рядка:<br />
+                  <code
+                    class="inline-copy"
+                    onclick="copyInlineCode(this)"
+                    title="Натисни, щоб скопіювати"
+                    >wall.Size = wallSize</code
+                  ><br />
+                  Повернемо збережений розмір. Стіна знову перекриє прохід!
+                </p>
+              </details>
+
+              <details class="hint-item">
+                <summary>Перевір результат 🎮</summary>
+                <p>
+                  Натисни <b>Play</b> та зачекай 30 секунд. Стіна спочатку має
+                  бути майже непомітною, а потім повернутися до свого розміру.
+                  Для повторної перевірки натисни <b>Stop</b>, а потім знову
+                  <b>Play</b>.
+                </p>
+              </details>
+            </div>
+
+            <!-- <div class="video-section">
               <h3 class="task-title" style="margin-bottom: 15px">
-                <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+                <i
+                  class="fa-brands fa-youtube"
+                  style="color: #ff0000"
+                  aria-hidden="true"
+                ></i>
                 Відеоінструкція
               </h3>
               <div class="youtube-wrapper">
@@ -97,8 +178,8 @@
                   width="560"
                   height="315"
                   src="https://www.youtube.com/embed/-_P73bkBfP8?si=rWMNgFnZvVtgqu30"
-                  title="YouTube video player"
-                  frameborder="0"
+                  title="Відеоінструкція до домашнього завдання"
+                  loading="lazy"
                   allow="
                     accelerometer;
                     autoplay;
@@ -112,32 +193,31 @@
                   allowfullscreen
                 ></iframe>
               </div>
-            </div>
+            </div> -->
+
             <div class="info-box footnote-box">
-              <strong>📌 Важлива виноска:</strong><br />
-              Поки що цей скрипт спрацює лише один раз після запуску гри. На
-              наступних уроках ми вивчимо повторення (цикли) і зробимо так, щоб
-              міст з'являвся та зникав постійно!
+              <div>
+                <strong>📌 Пам’ятай:</strong><br />
+                Відлік починається після запуску гри. Стіна з’являється один раз
+                і залишається на місці.
+              </div>
             </div>
           </section>
-
-          <hr class="divider" />
 
           <section class="interactive-section">
             <div class="interactive-task">
               <h3>🎮 Перевір себе: Синтаксис Векторів</h3>
               <p>
-                Навчись правильно писати команди для зміни розміру та кольору.
-                З'єднай дію з правильним кодом.
+                Повтори команди для зміни розміру та кольору. З’єднай дію з
+                правильним кодом.
               </p>
-
               <div class="iframe-wrapper">
                 <iframe
-                  style="max-width: 100%"
-                  src="https://wordwall.net/uk/embed/0479c74e76634c53acd7c6f7bb38b19e?themeId=59&templateId=72&fontStackId=0"
+                  src="https://wordwall.net/uk/embed/0479c74e76634c53acd7c6f7bb38b19e?themeId=59&amp;templateId=72&amp;fontStackId=0"
                   width="500"
                   height="380"
-                  frameborder="0"
+                  title="Wordwall: команди для зміни властивостей блока"
+                  loading="lazy"
                   allowfullscreen
                 ></iframe>
               </div>
@@ -145,13 +225,13 @@
           </section>
 
           <div class="info-box telegram-box">
-            <div class="tg-icon">📲</div>
+            <div class="tg-icon" aria-hidden="true">📲</div>
             <div>
               <strong>Як здати завдання:</strong><br />
-              1️⃣ Зроби відео того, як ти знищуєш зомбі кліками на своїй
-              арені..<br />
-              2️⃣ Скріншот пройденого інтерактивного завдання.<br />
-              Відправ матеріали у наш Telegram-чат.
+              📸 Зроби два скріншоти: прохід на початку гри та стіну через 30
+              секунд.<br />
+              🎮 Додай скріншот результату міні-гри.<br />
+              Відправ усе у наш Telegram-чат.
             </div>
           </div>
         </div>

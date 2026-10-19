@@ -3,131 +3,177 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox ДЗ - Завдання 2</title>
+    <title>Roblox ДЗ — Завдання 2: Розчисти шлях</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Нові класи лише для фото прикладу. Наявні стилі не змінюємо. */
+      .hw2-example {
+        display: block;
+        margin: 25px 0 10px;
+      }
+      .hw2-example img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 2px solid #3a3a48;
+        border-radius: 12px;
+        cursor: zoom-in;
+      }
+    </style>
   </head>
   <body>
     <div class="app-container">
       <aside class="sidebar">
-        <div class="logo">
-          <h2>🎮 Roblox ДЗ</h2>
-        </div>
-        <nav class="task-list">
+        <div class="logo"><h2>🎮 Roblox ДЗ</h2></div>
+        <nav class="task-list" aria-label="Домашні завдання">
           <a href="index.html" class="task-link">Start page</a>
           <a href="hw1.html" class="task-link">Завдання 1</a>
-          <a href="hw2.html" class="task-link active">Завдання 2</a>
-          <a href="hw3.html" class="task-link">Завдання 3 🔒</a>
-          <a href="hw4.html" class="task-link">Завдання 4 🔒</a>
-          <a href="hw5.html" class="task-link">Завдання 5 🔒</a>
-          <a href="hw6.html" class="task-link">Завдання 6 🔒</a>
-          <a href="hw7.html" class="task-link">Завдання 7 🔒</a>
+          <a href="hw2.html" class="task-link active" aria-current="page"
+            >Завдання 2</a
+          >
+          <a href="hw3.html" class="task-link">Завдання 3 </a>
+          <a href="hw4.html" class="task-link">Завдання 4 </a>
+          <a href="hw5.html" class="task-link">Завдання 5 </a>
+          <a href="hw6.html" class="task-link">Завдання 6 </a>
+          <a href="hw7.html" class="task-link">Завдання 7 </a>
 
-          <a href="hw8.html" class="task-link">Завдання 8 🔒</a>
-          <a href="hw9.html" class="task-link">Завдання 9 🔒</a>
-          <a href="hw10.html" class="task-link">Завдання 10 🔒</a>
-          <a href="hw11.html" class="task-link">Завдання 11 🔒</a>
-          <a href="hw12.html" class="task-link">Завдання 12 🔒</a>
-          <a href="hw13.html" class="task-link">Завдання 13 🔒</a>
-          <a href="hw14.html" class="task-link">Завдання 14 🔒</a>
-          <a href="hw15.html" class="task-link">Завдання 15 🔒</a>
-          <a href="hw16.html" class="task-link">Завдання 16 🔒</a>
+          <a href="hw8.html" class="task-link">Завдання 8 </a>
+          <a href="hw9.html" class="task-link">Завдання 9 </a>
+          <a href="hw10.html" class="task-link">Завдання 10 </a>
+          <a href="hw11.html" class="task-link">Завдання 11 </a>
+          <a href="hw12.html" class="task-link">Завдання 12 </a>
+          <a href="hw13.html" class="task-link">Завдання 13 </a>
+          <a href="hw14.html" class="task-link">Завдання 14 </a>
+          <a href="hw15.html" class="task-link">Завдання 15 </a>
+          <a href="hw16.html" class="task-link">Завдання 16 </a>
         </nav>
       </aside>
 
       <main class="main-content">
         <div class="content-box">
-          <h1>Завдання 2: Міст із пастками 🌉</h1>
-
+          <h1>Завдання 2: Розчисти шлях! 🧊</h1>
           <p>
-            Привіт! Готовий до нових випробувань? Сьогодні ми навчимося
-            створювати хитрощі та справжні пастки для гравців на твоєму рівні.
+            Продовжуємо твоє Obby! Додай етап із напівпрозорими блоками, які
+            перекривають дорогу. Крізь них видно наступну частину рівня, але
+            пройти не виходить. Щоб рухатися далі, гравець має
+            <strong>відсунути блоки мишкою!</strong>
           </p>
 
           <h3 class="task-title">🛠 Що потрібно зробити:</h3>
-          <ul class="task-steps">
+          <ol class="task-steps">
             <li>
-              <strong>Створи міст за прикладом.</strong> Використовуй звичайні
-              блоки (Part), щоб побудувати основу, бортики та декоративні
-              ліхтарі.
+              🏗️ <strong>Обери широку платформу</strong> на своєму Obby. Залиш
+              місце, щоб відсувати блоки вбік.
             </li>
             <li>
-              <strong>Налаштуй справжні пастки:</strong> Зроби так, щоб гравець
-              провалювався через виділені блоки на прикладі. Для цього виділи
-              деталь, знайди у вікні <em>Properties</em> (Властивості) галочку
-              <strong>CanCollide</strong> і <strong>ВИМКНИ</strong> її.
+              🧱 <strong>Перекрий дорогу трьома високими блоками</strong>, які
+              не вийде перестрибнути.
             </li>
             <li>
-              <strong>Створи обманки (Ілюзії):</strong> Зроби так, щоб деякі
-              блоки виглядали як дірки, але по них можна було безпечно ходити.
-              Для цього знайди параметр
-              <strong>Transparency</strong> (Прозорість) і зроби його рівним 1
-              (блок стане невидимим). Головне — для цих блоків
-              <strong>НЕ вимикай</strong> CanCollide. Гравці будуть думати, що
-              там прірва, а насправді — невидима підлога.
+              🧊 <strong>Зроби їх напівпрозорими:</strong>
+              <b>Transparency = 0.5</b>. Галочку <b>CanCollide</b> залиш
+              увімкненою ✅
             </li>
-          </ul>
-
-          <div class="slider-wrapper">
-            <div class="slider-container">
-              <img src="img/6.png" alt="Приклад мосту" class="slide active" />
-            </div>
-          </div>
+            <li>
+              🖱️ <strong>Додай DragDetector</strong> усередину кожного блока
+              через плюс в Explorer.
+            </li>
+            <li>
+              🎮 <strong>Натисни Play!</strong> Затискай блоки мишкою, відсувай
+              убік і проходь далі!
+            </li>
+          </ol>
 
           <div class="sticker-box">
-            <div class="character-sticker">
+            <div class="character-sticker" aria-hidden="true">
               <div class="char-hair"></div>
               <div class="char-face">🧐</div>
               <div class="char-body"></div>
             </div>
             <div class="sticker-text">
-              <strong>НЕ ЗАБУДЬ ПРО ЯКІР! ⚓</strong><br />
-              Якщо твій міст падає у прірву відразу після запуску гри — ти забув
-              виділити всі деталі та натиснути <em>Anchor</em> (Якір). Усі блоки
-              в повітрі мають бути закріплені!
+              <strong>ПРОЗОРИЙ ≠ ПРОХІДНИЙ!</strong><br />
+              <b>Transparency</b> відповідає за видимість, а <b>CanCollide</b> —
+              за зіткнення. Тому навіть напівпрозорий блок може зупинити гравця!
             </div>
           </div>
+
+          <h3 class="task-title">📸 Приклад етапу</h3>
+          <p>
+            Можеш обрати власні кольори й розміри. Головне — щоб перешкоди
+            працювали!
+          </p>
+          <!-- ФОТО: заміни шлях в href і src на адресу свого зображення. -->
+          <a
+            class="hw2-example"
+            href="img/6.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Відкрити фото прикладу в новій вкладці"
+          >
+            <img
+              src="img/6.png"
+              alt="Приклад етапу Obby з кольоровими напівпрозорими блоками, які потрібно відсувати"
+              loading="lazy"
+            />
+          </a>
+
+          <!-- <div class="video-section">
+            <h3 class="task-title">▶️ Відеоінструкція</h3>
+            <div class="youtube-wrapper">
+            
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/VIDEO_ID"
+                title="Відеоінструкція: прозорі перешкоди з DragDetector в Obby"
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div> -->
 
           <div class="interactive-task">
             <h3>🎮 Перевір себе: Знайди пару!</h3>
             <p>
-              Окрім побудови в Roblox Studio, на тебе чекає ще одне завдання!
-              Зіграй у цю міні-гру, щоб закріпити знання про властивості блоків
-              (Properties).
-              <strong
-                >Коли успішно пройдеш її, обов'язково зроби скріншот свого
-                результату та скинь його у наш Telegram-чат!</strong
-              >
+              Зіграй у міні-гру та повтори властивості блоків. Коли завершиш,
+              <strong>зроби скріншот результату</strong>.
             </p>
-
             <div class="iframe-wrapper">
               <iframe
-                style="max-width: 100%"
-                src="https://wordwall.net/uk/embed/eaa82c24f95a410fa7be0f07432468ce?themeId=66&templateId=3&fontStackId=0"
+                src="https://wordwall.net/uk/embed/eaa82c24f95a410fa7be0f07432468ce?themeId=66&amp;templateId=3&amp;fontStackId=0"
                 width="500"
                 height="380"
-                frameborder="0"
+                title="Міні-гра Wordwall: властивості блоків Roblox Studio"
+                loading="lazy"
                 allowfullscreen
               ></iframe>
             </div>
           </div>
 
           <div class="info-box telegram-box">
-            <div class="tg-icon">📲</div>
+            <div class="tg-icon" aria-hidden="true">📲</div>
             <div>
               <strong>Як здати домашнє завдання:</strong><br />
-              Коли все зробиш, обов'язково
-              <b>зроби два скріншоти (або фото екрана)</b>: <br />
-
-              📸 Фото твого <b>готового моста</b> з пастками.<br />
-
-              🎮 Фото <b>пройденої міні-гри</b> .
-              <br />
-
-              Відправ обидві фотографії у наш спільний чат в Telegram.
+              Надішли у наш спільний Telegram-чат:<br />
+              📸 Скріншот нового етапу твого Obby з трьома напівпрозорими
+              перешкодами.<br />
+              🎮 Скріншот результату міні-гри.<br />
+              🎥 За бажанням — коротке відео, як ти відсуваєш блоки й проходиш
+              далі.
             </div>
           </div>
         </div>
